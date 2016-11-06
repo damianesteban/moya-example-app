@@ -9,9 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let service = APINameService()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        service.getColors(target: APIName.colors) { result in
+            switch result {
+            case let .success(colors):
+                print(colors)
+            case let .failure(error):
+                print(error)
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

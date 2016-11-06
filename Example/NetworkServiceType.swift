@@ -14,9 +14,9 @@ import Moya
 protocol NetworkServiceType {
     // add moyaprovider init
     var provider: MoyaProvider<APIName> { get set }
-    func requestJSON(target: APIName, completion: (Result<JSONDictionary, DomainError>) -> Void)
-    func requestObject<T: JSONDeserializable>(target: APIName, completion: (Result<T, DomainError>) -> Void)
-    func requestObjects<T: JSONDeserializable>(target: APIName, completion: (Result<[T], DomainError>) -> Void)
+    func requestJSON(target: APIName, completion: @escaping (Result<JSONDictionary, DomainError>) -> Void)
+    func requestObject<T: JSONDeserializable>(target: APIName, completion: @escaping (Result<T, DomainError>) -> Void)
+    func requestObjects<T: JSONDeserializable>(target: APIName, completion: @escaping (Result<[T], DomainError>) -> Void)
 }
 
 extension NetworkServiceType {
@@ -33,12 +33,13 @@ extension NetworkServiceType {
                     completion(Result.failure(error as! DomainError))
                 }
             case .failure(_):
-                completion(Result.failure(DomainError.jsonError))
+                print("error!!!")
+                completion(Result.failure(DomainError(message: "unable to request json")))
             }
         }
     }
     
-    func requestObject<T: JSONDeserializable>(target: APIName, completion: (Result<T, DomainError>) -> Void) {
+    func requestObject<T: JSONDeserializable>(target: APIName, completion: @escaping (Result<T, DomainError>) -> Void) {
         self.requestJSON(target: target) { result in
             switch result {
             case let .success(json):
@@ -49,12 +50,12 @@ extension NetworkServiceType {
                     completion(Result.failure(error as! DomainError))
                 }
             case .failure(_):
-                completion(Result.failure(DomainError.jsonError))
+                completion(Result.failure(DomainError(message: "Unable to request object")))
             }
         }
     }
     
-    func requestObjects<T>(target: APIName, completion: (Result<[T], DomainError>) -> Void) where T: JSONDeserializable {
+    func requestObjects<T: JSONDeserializable>(target: APIName, completion: @escaping (Result<[T], DomainError>) -> Void) {
         self.requestJSON(target: target) { result in
             switch result {
             case let .success(json):
@@ -64,13 +65,11 @@ extension NetworkServiceType {
                         let objectArrayResult: Result<[T], DomainError> = parseArrayToObjects(array: json)
                         completion(objectArrayResult)
                     case .failure(_):
-                        completion(Result.failure(DomainError.jsonError))
+                        completion(Result.failure(DomainError(message: "Unable to request objects")))
                     }
             case .failure(_):
-                completion(Result.failure(DomainError.jsonError))
+                completion(Result.failure(DomainError(message: "Unable to request objects")))
             }
         }
     }
-    
-    
 }
