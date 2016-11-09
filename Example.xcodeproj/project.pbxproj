@@ -16,6 +16,9 @@
 		FB3475541DCEBAEC00B9873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3475521DCEBAEC00B9873F /* LaunchScreen.storyboard */; };
 		FB34755F1DCEBAED00B9873F /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34755E1DCEBAED00B9873F /* ExampleTests.swift */; };
 		FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */; };
+		FB81DFA71DD2A44000EE4615 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA61DD2A44000EE4615 /* User.swift */; };
+		FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */; };
+		FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */; };
 		FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2E3931DCEBF1000EB24FB /* DomainError.swift */; };
 		FBE523431DCFDB9C006B3B1C /* ReqResProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523421DCFDB9C006B3B1C /* ReqResProvider.swift */; };
 		FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523441DCFE00E006B3B1C /* JSON.swift */; };
@@ -52,6 +55,9 @@
 		FB34755E1DCEBAED00B9873F /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		FB3475601DCEBAED00B9873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		FB81DFA61DD2A44000EE4615 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FBB2E3931DCEBF1000EB24FB /* DomainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		FBE523421DCFDB9C006B3B1C /* ReqResProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReqResProvider.swift; sourceTree = "<group>"; };
 		FBE523441DCFE00E006B3B1C /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		FB34753D1DCEBAEC00B9873F = {
 			isa = PBXGroup;
 			children = (
-				FB3475481DCEBAEC00B9873F /* Example */,
+				FB3475481DCEBAEC00B9873F /* Sources */,
 				FB34755D1DCEBAED00B9873F /* ExampleTests */,
 				FB3475471DCEBAEC00B9873F /* Products */,
 				607590A4294BDE550FE11863 /* Pods */,
@@ -120,28 +126,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FB3475481DCEBAEC00B9873F /* Example */ = {
+		FB3475481DCEBAEC00B9873F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FB81DFAA1DD2A79300EE4615 /* Extensions */,
+				FB81DFAE1DD2AA4100EE4615 /* Protocols */,
 				FBE5234B1DCFEFB9006B3B1C /* Models */,
-				FBE523461DCFE1F1006B3B1C /* Common */,
 				FB3475691DCEBBEC00B9873F /* Services */,
-				FB3475491DCEBAEC00B9873F /* AppDelegate.swift */,
-				FB34754B1DCEBAEC00B9873F /* ViewController.swift */,
-				FB34754D1DCEBAEC00B9873F /* Main.storyboard */,
-				FB3475501DCEBAEC00B9873F /* Assets.xcassets */,
-				FB3475521DCEBAEC00B9873F /* LaunchScreen.storyboard */,
-				FB3475551DCEBAEC00B9873F /* Info.plist */,
-				FBB2E3931DCEBF1000EB24FB /* DomainError.swift */,
+				FB81DFAF1DD2AA4900EE4615 /* ViewModels */,
+				FB81DFB01DD2AA5A00EE4615 /* Controllers */,
+				FB81DFB11DD2AA8900EE4615 /* Views */,
+				FBE523461DCFE1F1006B3B1C /* Common */,
+				FB81DFB21DD2AAF500EE4615 /* Resources */,
 			);
+			name = Sources;
 			path = Example;
 			sourceTree = "<group>";
 		};
 		FB34755D1DCEBAED00B9873F /* ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB34755E1DCEBAED00B9873F /* ExampleTests.swift */,
-				FB3475601DCEBAED00B9873F /* Info.plist */,
+				FB81DFB81DD2AB5A00EE4615 /* Tests */,
+				FB81DFB71DD2AB5400EE4615 /* Helpers */,
+				FB81DFB61DD2AB4B00EE4615 /* Resources */,
 			);
 			path = ExampleTests;
 			sourceTree = "<group>";
@@ -149,17 +156,115 @@
 		FB3475691DCEBBEC00B9873F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */,
+				FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */,
 				FBE523421DCFDB9C006B3B1C /* ReqResProvider.swift */,
-				FBE523441DCFE00E006B3B1C /* JSON.swift */,
 				FBE523491DCFEE7C006B3B1C /* APINameService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
 		};
+		FB81DFAA1DD2A79300EE4615 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FB81DFAE1DD2AA4100EE4615 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		FB81DFAF1DD2AA4900EE4615 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		FB81DFB01DD2AA5A00EE4615 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB3475491DCEBAEC00B9873F /* AppDelegate.swift */,
+				FB34754B1DCEBAEC00B9873F /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FB81DFB11DD2AA8900EE4615 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FB81DFB21DD2AAF500EE4615 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB3475501DCEBAEC00B9873F /* Assets.xcassets */,
+				FB81DFB31DD2AB0300EE4615 /* Storyboards */,
+				FB81DFB41DD2AB0B00EE4615 /* Nibs */,
+				FB81DFB51DD2AB1600EE4615 /* Other-Sources */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FB81DFB31DD2AB0300EE4615 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FB34754D1DCEBAEC00B9873F /* Main.storyboard */,
+				FB3475521DCEBAEC00B9873F /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		FB81DFB41DD2AB0B00EE4615 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		FB81DFB51DD2AB1600EE4615 /* Other-Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FB3475551DCEBAEC00B9873F /* Info.plist */,
+			);
+			name = "Other-Sources";
+			sourceTree = "<group>";
+		};
+		FB81DFB61DD2AB4B00EE4615 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB3475601DCEBAED00B9873F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FB81DFB71DD2AB5400EE4615 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FB81DFB81DD2AB5A00EE4615 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FB34755E1DCEBAED00B9873F /* ExampleTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		FBE523461DCFE1F1006B3B1C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FBE523441DCFE00E006B3B1C /* JSON.swift */,
+				FBB2E3931DCEBF1000EB24FB /* DomainError.swift */,
 				FBE523471DCFE20A006B3B1C /* Functions.swift */,
 			);
 			name = Common;
@@ -169,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE5234C1DCFEFC4006B3B1C /* Color.swift */,
+				FB81DFA61DD2A44000EE4615 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -380,11 +486,14 @@
 				FB34754C1DCEBAEC00B9873F /* ViewController.swift in Sources */,
 				FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */,
 				FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */,
+				FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */,
 				FBE5234A1DCFEE7C006B3B1C /* APINameService.swift in Sources */,
 				FBE523481DCFE20A006B3B1C /* Functions.swift in Sources */,
 				FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */,
 				FBE523431DCFDB9C006B3B1C /* ReqResProvider.swift in Sources */,
 				FB34754A1DCEBAEC00B9873F /* AppDelegate.swift in Sources */,
+				FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */,
+				FB81DFA71DD2A44000EE4615 /* User.swift in Sources */,
 				FBE5234D1DCFEFC4006B3B1C /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

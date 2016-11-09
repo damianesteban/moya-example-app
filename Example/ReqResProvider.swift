@@ -9,7 +9,11 @@
 import Foundation
 import Moya
 
-// MARK: - Provider setup
+/** MoyaProvider: This file contains the MoyaProvider definition.  All endpoints, parameters, headers, etc. are set here.
+    NOTE: See `NetworkServiceType` for the protocol that makes use of this Provider.
+**/
+
+// MARK: - Provider setup.  This is a JSON formatting plugin
 func JSONResponseDataFormatter(_ data: Data) -> Data {
     do {
         let dataAsJSON = try JSONSerialization.jsonObject(with: data)
@@ -29,12 +33,14 @@ private extension String {
     }
 }
 
+// The enum that contains our endpoint definitions.
 enum APIName {
     case colors
     case color(id: String)
     case register(email: String, password: String)
 }
 
+// The enum conforms to `TargetType`
 extension APIName: TargetType {
     var baseURL: URL { return URL(string: "http://reqres.in/api")! }
     var path: String {
@@ -48,6 +54,7 @@ extension APIName: TargetType {
         }
     }
     
+    // The method
     var method: Moya.Method {
         switch self {
         case .colors, .color(_):
@@ -57,6 +64,7 @@ extension APIName: TargetType {
         }
     }
     
+    // The parameters
     var parameters: [String: Any]? {
         switch self {
         case .colors:
@@ -70,11 +78,13 @@ extension APIName: TargetType {
             ]
         }
     }
-        
+    
+    // The type of Task (there are several)
     var task: Task {
         return .request
     }
-        
+    
+    // Here we provide sample data for testing
     var sampleData: Data {
         switch self {
         case .color:
@@ -87,6 +97,7 @@ extension APIName: TargetType {
     }
 }
 
+// Convenience function
 public func url(_ route: TargetType) -> String {
     return route.baseURL.appendingPathComponent(route.path).absoluteString
 }

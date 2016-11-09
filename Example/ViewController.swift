@@ -10,11 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let service = APINameService()
+    var service: APINameService?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        service.getColors(target: APIName.colors) { result in
+        service?.getColors(target: APIName.colors) { result in
             switch result {
             case let .success(colors):
                 print(colors)

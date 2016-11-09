@@ -24,4 +24,8 @@ struct DomainError: Swift.Error {
         self.line = line
         self.message = message
     }
+    
+    static func underlyingError(error: Swift.Error) {
+        print(error)
+    }
 }
