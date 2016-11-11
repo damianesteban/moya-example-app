@@ -4,7 +4,10 @@
 target 'Example' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Moya', '8.0.0-beta.2'
+  pod 'Moya', '8.0.0-beta.4'
+  pod 'KeychainAccess'
+  pod 'SwiftGen'
+
 
   # Pods for Example
 

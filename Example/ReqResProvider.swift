@@ -33,6 +33,27 @@ private extension String {
     }
 }
 
+// MARK: Token Authentication Endpoint
+/** This is an example of a custom endpoint in Moya.  While this might look a bit complicated
+    at first glance, it just specifies which endpoints shouold have the token that is stored in
+    the Keychain as part of the request.
+ 
+    NOTE: the .color endpoint is not ACTUALLY a secure endpoint.  This is just for example purposes.
+**/
+fileprivate let endpointClosure = { (target: APIName) -> Endpoint<APIName> in
+    let url = target.baseURL.appendingPathComponent(target.path).absoluteString
+    let endpoint: Endpoint<APIName> = Endpoint<APIName>(URL: url,
+                                                  sampleResponseClosure: {.networkResponse(200, target.sampleData)},
+                                                  method: target.method, parameters: target.parameters)
+    
+    switch target {
+    case .colors, .register(_, _):
+        return endpoint
+    case .color(_):
+        return endpoint.adding(httpHeaderFields: ["x-access-token": AppStorage.token!])
+    }
+}
+
 // The enum that contains our endpoint definitions.
 enum APIName {
     case colors
@@ -58,9 +79,9 @@ extension APIName: TargetType {
     var method: Moya.Method {
         switch self {
         case .colors, .color(_):
-            return .GET
+            return .get
         case .register(_, _):
-            return .POST
+            return .post
         }
     }
     

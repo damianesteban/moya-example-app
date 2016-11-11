@@ -8,9 +8,6 @@
 
 import Foundation
 
-//enum DomainError: Error {
-//    case jsonError
-//}
 
 struct DomainError: Swift.Error {
     public let file: StaticString

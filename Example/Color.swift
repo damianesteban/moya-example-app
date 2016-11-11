@@ -9,7 +9,7 @@
 import Foundation
 
 /// A Color
-struct Color {
+struct ColorModel {
     let id: Int
     let name: String
     let year: Int
@@ -17,7 +17,7 @@ struct Color {
 }
 
 // Conforms to JSONODeserializable
-extension Color: JSONDeserializable {
+extension ColorModel: JSONDeserializable {
     init(jsonRepresentation: JSONDictionary) throws {
         id = try decode(jsonRepresentation, key: "id")
         name = try decode(jsonRepresentation, key: "name")

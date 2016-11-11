@@ -29,10 +29,16 @@ class ServiceLocator {
         return apiNameService
     }
     
-    static func provideRootViewControllerWithService() -> ViewController {
-        let service = provideAPINameServiceService()
-        let viewController = provideUIViewControllerWithName(name: "ViewController") as! ViewController
-        viewController.service = service
+    // Returns a `APINameService`
+    private static func provideUserService() -> UserService {
+        let userService = UserService()
+        return userService
+    }
+    
+    static func provideRootViewControllerWithService() -> UserSignupViewController {
+        let service = provideUserService()
+        let viewController = provideUIViewControllerWithName(name: "UserSignupViewController") as! UserSignupViewController
+        viewController.userService = service
         return viewController
     }
 }

@@ -21,18 +21,13 @@ struct APINameService: NetworkServiceType {
         and because we always pass in a `TargetType` our methods can always be nice and short like
         this.
     */
-    func getColors(target: APIName, completion: @escaping (Result<[Color], DomainError>) -> Void) {
+    func getColors(target: APIName, completion: @escaping (Result<[ColorModel], DomainError>) -> Void) {
         return self.requestObjects(target: target, completion: completion)
     }
     
     // This method makes use of the `requestObject` method from the protocol extension.
-    func getColor(target: APIName, completion: @escaping (Result<Color, DomainError>) -> Void) {
+    func getColor(target: APIName, completion: @escaping (Result<ColorModel, DomainError>) -> Void) {
         self.requestObject(target: target, completion: completion)
-    }
-    
-    // This method makes use of the `requestObject` method from the protocol extension.
-    func registerUser(target: APIName, completion: @escaping (Result<User, DomainError>) -> Void) {
-        return self.requestObject(target: target, completion: completion)
     }
 }
 
