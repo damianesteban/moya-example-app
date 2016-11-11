@@ -16,6 +16,13 @@ struct APINameService: NetworkServiceType {
     // MARK: - Provider
     var provider: MoyaProvider<APIName>
     
+    // Default implementation of the initializer.  We do this because while running the app the Service
+    // will always be initialized this way, but for testing we can provide a different MoyaProvider
+    init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>(plugins:
+        [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])) {
+        self.init()
+    }
+    
     /*  This method makes use of the `requestObjects` method from the protocol extension.
         Because all of the objects we are making requests for conform to `JSONDeserializable`
         and because we always pass in a `TargetType` our methods can always be nice and short like

@@ -26,13 +26,6 @@ protocol NetworkServiceType {
 // have these methods "for free".
 extension NetworkServiceType {
     
-    // Default implementation of the initializer.  We do this because while running the app the Service
-    // will always be initialized this way, but for testing we can provide a different MoyaProvider
-    init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>(plugins:
-        [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])) {
-        self.init()
-    }
-    
     // Requests JSON from the API via the Provider
     func requestJSON(target: APIName, completion: @escaping (Result<JSONDictionary, DomainError>) -> Void) {
         provider.request(target) { result in
