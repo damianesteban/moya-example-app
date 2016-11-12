@@ -26,6 +26,12 @@ protocol NetworkServiceType {
 // have these methods "for free".
 extension NetworkServiceType {
     
+    init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>(plugins: [NetworkLoggerPlugin(verbose: true,
+        responseDataFormatter: JSONResponseDataFormatter)])) {
+        self.init()
+        self.provider = provider
+    }
+    
     // Requests JSON from the API via the Provider
     func requestJSON(target: APIName, completion: @escaping (Result<JSONDictionary, DomainError>) -> Void) {
         provider.request(target) { result in

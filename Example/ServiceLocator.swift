@@ -29,16 +29,25 @@ class ServiceLocator {
         return apiNameService
     }
     
-    // Returns a `APINameService`
+    // Returns a `UserService`
     private static func provideUserService() -> UserService {
         let userService = UserService()
         return userService
     }
     
+    // Returns a `KeychainService`
+    private static func provideKeychainService() -> KeychainService {
+        let keychainService = KeychainService()
+        return keychainService
+    }
+    
+    // Returns the UserSignupViewController (the rootViewController) with its dependencies.
     static func provideRootViewControllerWithService() -> UserSignupViewController {
-        let service = provideUserService()
+        let userService = provideUserService()
+        let keychainService = provideKeychainService()
         let viewController = provideUIViewControllerWithName(name: "UserSignupViewController") as! UserSignupViewController
-        viewController.userService = service
+        viewController.userService = userService
+        viewController.keychainService = keychainService
         return viewController
     }
 }
