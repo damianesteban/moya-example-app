@@ -23,19 +23,19 @@ class ServiceLocator {
         return storyBoard.instantiateViewController(withIdentifier: name)
     }
     
-    // Returns a `APINameService`
-    private static func provideAPINameServiceService() -> APINameService {
-        let apiNameService = APINameService()
-        return apiNameService
+    // Returns a ColorsService
+    private static func provideAPINameServiceService() -> ColorsService {
+        let colorsService = ColorsService()
+        return colorsService
     }
     
-    // Returns a `UserService`
+    // Returns a UserService
     private static func provideUserService() -> UserService {
         let userService = UserService()
         return userService
     }
     
-    // Returns a `KeychainService`
+    // Returns a KeychainService 
     private static func provideKeychainService() -> KeychainService {
         let keychainService = KeychainService()
         return keychainService
@@ -43,11 +43,10 @@ class ServiceLocator {
     
     // Returns the UserSignupViewController (the rootViewController) with its dependencies.
     static func provideRootViewControllerWithService() -> UserSignupViewController {
-        let userService = provideUserService()
-        let keychainService = provideKeychainService()
         let viewController = provideUIViewControllerWithName(name: "UserSignupViewController") as! UserSignupViewController
-        viewController.userService = userService
-        viewController.keychainService = keychainService
         return viewController
     }
+    
+    // Services
+
 }

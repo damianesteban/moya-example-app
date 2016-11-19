@@ -11,10 +11,9 @@ import Result
 
 protocol DataSourceType {
     associatedtype Object
-    
     func fetchAllObjects() -> Result<[Object], DomainError>
     func fetchObjectById(objectId: String) -> Result<Object, DomainError>
-    func insertOrUpdateObject(object: Object) -> Result<Void, DomainError>
-    func deleteObjectByID(object: Object) -> Result<Void, DomainError>
-    func clearAll() -> Result<Void, DomainError>
+    func insertOrUpdateObject(object: Object) -> Bool
+    func deleteObjectByID(object: Object) -> Bool
+    func clearAll() -> Bool
 }

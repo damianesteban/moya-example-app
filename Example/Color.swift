@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+
 /// A Color
 struct ColorModel {
     let id: String
@@ -28,7 +29,8 @@ extension ColorModel: JSONDeserializable {
 
 /// Conforms to RealmInitializable
 extension ColorModel: RealmInitializable {
-    init?(object: RealmColorModel) {
+    typealias RealmObject = RealmColorModel
+    init?(object: RealmObject) {
         self.id = object.id
         self.name = object.name
         self.year = object.year

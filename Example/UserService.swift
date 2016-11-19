@@ -12,7 +12,7 @@ import Result
 
 /// Conforms to the `NetworkServiceType` protocol
 class UserService: NetworkServiceType {
-    
+
     // MARK: - Properties
     var provider: MoyaProvider<APIName>
     

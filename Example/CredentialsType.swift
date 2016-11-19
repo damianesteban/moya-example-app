@@ -15,5 +15,5 @@ protocol CredentialType {
 }
 
 protocol CredentialsServiceType {
-    func saveCredential(credential: CredentialType) -> Result<Void, DomainError>
+    func saveCredential(credential: CredentialType) -> Bool
 }

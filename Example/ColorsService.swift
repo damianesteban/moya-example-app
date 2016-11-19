@@ -11,7 +11,7 @@ import Moya
 import Result
 
 /// Conforms to the `NetworkServiceType` protocol
-struct APINameService: NetworkServiceType {
+struct ColorsService: NetworkServiceType {
     
     // MARK: - Provider
     var provider: MoyaProvider<APIName>

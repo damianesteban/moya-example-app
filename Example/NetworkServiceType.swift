@@ -42,7 +42,7 @@ extension NetworkServiceType {
                     let jsonParsingResult = parseObjectToDictionary(object: json)
                     completion(jsonParsingResult)
                 } catch let error {
-                    completion(Result.failure(error as! DomainError))
+                    completion(Result.failure(DomainError(message: error.localizedDescription)))
                 }
             case .failure(_):
                 completion(Result.failure(DomainError(message: "unable to request json")))

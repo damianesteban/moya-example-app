@@ -9,6 +9,8 @@
 import Foundation
 import RealmSwift
 
+/// Convenience protocol to provide a common initializer for Realm Objects
 protocol RealmInitializable {
-    init?(object: RealmColorModel)
+    associatedtype RealmObject
+    init?(object: RealmObject)
 }

@@ -10,15 +10,23 @@ import Foundation
 import KeychainAccess
 import Result
 
+/// KeychainService - Manages keychain item
 struct KeychainService: CredentialsServiceType {
+    
+    // MARK: Properties
     private let keychain = Keychain(service: Constants.KeychainService)
     
-    func saveCredential(credential: CredentialType) -> Result<Void, DomainError> {
+    // MARK: Methods
+    /// Saves a credential to the keychain
+    func saveCredential(credential: CredentialType) -> Bool {
         do {
             try keychain.set(credential.value, key: credential.key)
-            return Result.success()
+            return true
         } catch let error {
-            return Result.failure(DomainError(message: error.localizedDescription))
+            print("Error: \(DomainError(message: error.localizedDescription))")
+            return false
         }
     }
+    
+    // TODO: Add update and delete methods
 }
