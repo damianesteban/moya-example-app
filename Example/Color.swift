@@ -7,10 +7,10 @@
 //
 
 import Foundation
-
+import RealmSwift
 /// A Color
 struct ColorModel {
-    let id: Int
+    let id: String
     let name: String
     let year: Int
     let pantoneValue: String
@@ -23,5 +23,15 @@ extension ColorModel: JSONDeserializable {
         name = try decode(jsonRepresentation, key: "name")
         year = try decode(jsonRepresentation, key: "year")
         pantoneValue = try decode(jsonRepresentation, key: "pantone_value")
+    }
+}
+
+/// Conforms to RealmInitializable
+extension ColorModel: RealmInitializable {
+    init?(object: RealmColorModel) {
+        self.id = object.id
+        self.name = object.name
+        self.year = object.year
+        self.pantoneValue = object.pantoneValue
     }
 }

@@ -7,7 +7,8 @@ target 'Example' do
   pod 'Moya', '8.0.0-beta.4'
   pod 'KeychainAccess'
   pod 'SwiftGen'
-
+  pod 'RealmSwift'
+  pod 'GlueKit', :git => 'https://github.com/lorentey/GlueKit.git'
 
   # Pods for Example
 
