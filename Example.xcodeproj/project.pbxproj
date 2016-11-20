@@ -26,6 +26,8 @@
 		FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABC1DE124810016627E /* UIViewController+Alert.swift */; };
 		FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */; };
 		FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */; };
+		FB654AC31DE207510016627E /* Segue+Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC21DE207510016627E /* Segue+Perform.swift */; };
+		FB654AC51DE207B10016627E /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC41DE207B10016627E /* ColorsViewController.swift */; };
 		FB81DFA71DD2A44000EE4615 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA61DD2A44000EE4615 /* User.swift */; };
 		FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */; };
 		FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */; };
@@ -82,6 +84,8 @@
 		FB654ABC1DE124810016627E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Convenience.swift"; sourceTree = "<group>"; };
 		FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSignupViewModel+Delegate.swift"; sourceTree = "<group>"; };
+		FB654AC21DE207510016627E /* Segue+Perform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Segue+Perform.swift"; sourceTree = "<group>"; };
+		FB654AC41DE207B10016627E /* ColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		FB81DFA61DD2A44000EE4615 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 				FB1E0A2F1DDFE1CA00738DB2 /* Results+toArray.swift */,
 				FB654ABC1DE124810016627E /* UIViewController+Alert.swift */,
 				FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */,
+				FB654AC21DE207510016627E /* Segue+Perform.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				FB3475491DCEBAEC00B9873F /* AppDelegate.swift */,
 				FB34754B1DCEBAEC00B9873F /* ViewController.swift */,
 				FBA356FB1DD53D5B00DEEBF1 /* UserSignupViewController.swift */,
+				FB654AC41DE207B10016627E /* ColorsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -580,12 +586,14 @@
 				FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */,
 				FBE5234A1DCFEE7C006B3B1C /* ColorsService.swift in Sources */,
 				FB1E0A3C1DE00CB800738DB2 /* ProvisioningServiceType.swift in Sources */,
+				FB654AC51DE207B10016627E /* ColorsViewController.swift in Sources */,
 				FBE523481DCFE20A006B3B1C /* Functions.swift in Sources */,
 				FB1E0A481DE0DB1200738DB2 /* Bindable.swift in Sources */,
 				FB1E0A301DDFE1CA00738DB2 /* Results+toArray.swift in Sources */,
 				FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */,
 				FB1E0A351DE008A000738DB2 /* UserSignupViewModel.swift in Sources */,
 				FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */,
+				FB654AC31DE207510016627E /* Segue+Perform.swift in Sources */,
 				FBE523431DCFDB9C006B3B1C /* Provider.swift in Sources */,
 				FB34754A1DCEBAEC00B9873F /* AppDelegate.swift in Sources */,
 				FBA356FA1DD53CF600DEEBF1 /* CredentialsType.swift in Sources */,

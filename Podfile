@@ -8,9 +8,6 @@ target 'Example' do
   pod 'KeychainAccess'
   pod 'SwiftGen'
   pod 'RealmSwift'
-  pod 'GlueKit', :git => 'https://github.com/lorentey/GlueKit.git'
-
-  # Pods for Example
 
   target 'ExampleTests' do
     inherit! :search_paths

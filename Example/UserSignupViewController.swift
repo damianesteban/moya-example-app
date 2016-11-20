@@ -14,7 +14,11 @@ private extension Selector {
 }
 
 class UserSignupViewController: UIViewController, UITextFieldDelegate, UserSignupViewModelDelegate {
-
+    
+    private enum Segue: String {
+        case showColors = "showColorsView"
+    }
+    
     // MARK: Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -43,9 +47,10 @@ class UserSignupViewController: UIViewController, UITextFieldDelegate, UserSignu
     func showError() {
         displayMessage(title: "Invalid Username or Password", message: "Please enter a valid username or password")
     }
-
+    
+    // Goes to the next view.  NOTE: This uses the segue extension in the Extensions folder.
     func nextView() {
-        // TODO: Implementation Needed
+        self.performSegue(identifier: Segue.showColors, sender: self)
     }
     
     // MARK: - UITextField Delegate method

@@ -1,6 +1,0 @@
-framework module GlueKit {
-  umbrella header "GlueKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
