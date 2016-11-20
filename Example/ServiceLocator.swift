@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 
-/// ServiceLocator.  Read more about this design pattern here: https://msdn.microsoft.com/en-us/library/ff648968.aspx
+// ServiceLocator.
+// Read more about this design pattern here: https://msdn.microsoft.com/en-us/library/ff648968.aspx
 class ServiceLocator {
+    
+    // Singleton
     static let sharedInstance = ServiceLocator()
     
     // Convenience function for Storyboard
@@ -23,35 +26,47 @@ class ServiceLocator {
         return storyBoard.instantiateViewController(withIdentifier: name)
     }
     
-    // Returns a ColorsService
-    private static func provideAPINameServiceService() -> ColorsService {
+    // Provides an instance of the ColorsService
+    private static func provideColorsService() -> ColorsService {
         let colorsService = ColorsService()
         return colorsService
     }
     
-    // Returns a UserService
+    // Provides an instance of the UserService
     private static func provideUserService() -> UserService {
         let userService = UserService()
         return userService
     }
     
-    // Returns a KeychainService 
+    // Provides an instance of the KeychainService
     private static func provideKeychainService() -> KeychainService {
         let keychainService = KeychainService()
         return keychainService
     }
     
-    // Returns the UserSignupViewController (the rootViewController) with its dependencies.
+    // Provides an instances of the UserSignupInputValidationService
+    private static func provideInputValidationService() -> UserSignupInputValidationService {
+        let userSignupInputValidationService = UserSignupInputValidationService()
+        return userSignupInputValidationService
+    }
+    
+    // Provides and instance of the NewUserProvisioningService
+    private static func provideNewUserProvisioningService() -> NewUserProvisioningService {
+        let userService = provideUserService()
+        let keychainService = provideKeychainService()
+        let newUserProvisioningService = NewUserProvisioningService(networkService: userService,
+            keychainService: keychainService)
+        return newUserProvisioningService
+    }
+    
+    // Returns the UserSignupViewController (the rootViewController) with its dependencies
     static func provideRootViewControllerWithViewModel() -> UserSignupViewController {
-        let ivs = UserSignupInputValidationService()
-        let networkService = UserService()
-        let ups = NewUserProvisioningService(networkService: networkService, keychainService: provideKeychainService())
-        let viewModel = UserSignupViewModel(inputValidationService: ivs, userProvisioningService: ups)
+        let userProvisioningService = provideNewUserProvisioningService()
+        let newUserInputValidationService = provideInputValidationService()
+        let viewModel = UserSignupViewModel(inputValidationService: newUserInputValidationService,
+            userProvisioningService: userProvisioningService)
         let viewController = provideUIViewControllerWithName(name: "UserSignupViewController") as! UserSignupViewController
         viewController.viewModel = viewModel
         return viewController
     }
-    
-    // Services
-
 }
