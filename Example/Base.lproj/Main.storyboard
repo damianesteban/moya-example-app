@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1pa-ds-oF2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1pa-ds-oF2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +21,51 @@
                     <view key="view" contentMode="scaleToFill" id="ivW-2g-7u8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-2z-hIX">
+                                <rect key="frame" x="16" y="180" width="343" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPB-S0-Mni">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="27"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i3u-Kl-1Sz">
+                                        <rect key="frame" x="0.0" y="34" width="343" height="26"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GK-hQ-1t0">
+                                <rect key="frame" x="154" y="318" width="67" height="30"/>
+                                <state key="normal" title="Signup"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IRd-2z-hIX" secondAttribute="trailing" id="Atn-1J-sdQ"/>
+                            <constraint firstItem="3GK-hQ-1t0" firstAttribute="leading" secondItem="ivW-2g-7u8" secondAttribute="leadingMargin" constant="138" id="KYL-pl-ElH"/>
+                            <constraint firstItem="ZMu-EL-h5m" firstAttribute="top" secondItem="IRd-2z-hIX" secondAttribute="bottom" constant="427" id="OMC-K1-9Bd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3GK-hQ-1t0" secondAttribute="trailing" constant="138" id="Rjw-kB-EXa"/>
+                            <constraint firstItem="IRd-2z-hIX" firstAttribute="top" secondItem="2Du-mq-i1X" secondAttribute="bottom" constant="160" id="goS-OV-vIO"/>
+                            <constraint firstItem="ZMu-EL-h5m" firstAttribute="top" secondItem="3GK-hQ-1t0" secondAttribute="bottom" constant="319" id="jS4-Vf-V4W"/>
+                            <constraint firstItem="IRd-2z-hIX" firstAttribute="leading" secondItem="ivW-2g-7u8" secondAttribute="leadingMargin" id="jfz-RJ-2us"/>
+                            <constraint firstItem="3GK-hQ-1t0" firstAttribute="top" secondItem="IRd-2z-hIX" secondAttribute="bottom" constant="78" id="wlU-ff-UM0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="i3u-Kl-1Sz" id="fY8-9P-Ik5"/>
+                        <outlet property="signupButton" destination="3GK-hQ-1t0" id="dE4-QI-P1W"/>
+                        <outlet property="usernameTextField" destination="JPB-S0-Mni" id="LeQ-Cz-j5R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKv-4N-geI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="8RN-g2-Emt" customClass="UserSignupPresentationControl" customModule="Example" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="-2"/>
+            <point key="canvasLocation" x="-1031.2" y="-18.440779610194905"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

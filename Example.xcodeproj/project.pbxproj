@@ -9,16 +9,13 @@
 /* Begin PBXBuildFile section */
 		8BCB0195FF465ECB27A3736A /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418555A15A040D7520D59D0E /* Pods_ExampleTests.framework */; };
 		913628AC6D93CEA7FE704FE0 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F1215CC4667B9D148EDD1A /* Pods_Example.framework */; };
-		FB1E0A261DDFDD3200738DB2 /* DataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A251DDFDD3200738DB2 /* DataSourceType.swift */; };
-		FB1E0A281DDFDE6F00738DB2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A271DDFDE6F00738DB2 /* RealmService.swift */; };
-		FB1E0A2B1DDFDECE00738DB2 /* RealmColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A2A1DDFDECE00738DB2 /* RealmColorModel.swift */; };
-		FB1E0A2D1DDFE01F00738DB2 /* RealmInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A2C1DDFE01F00738DB2 /* RealmInitializable.swift */; };
 		FB1E0A301DDFE1CA00738DB2 /* Results+toArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A2F1DDFE1CA00738DB2 /* Results+toArray.swift */; };
 		FB1E0A351DE008A000738DB2 /* UserSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A341DE008A000738DB2 /* UserSignupViewModel.swift */; };
-		FB1E0A371DE00A4F00738DB2 /* RealmUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A361DE00A4F00738DB2 /* RealmUserModel.swift */; };
 		FB1E0A3A1DE00C9700738DB2 /* UserProvisioningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A391DE00C9700738DB2 /* UserProvisioningService.swift */; };
 		FB1E0A3C1DE00CB800738DB2 /* ProvisioningServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A3B1DE00CB800738DB2 /* ProvisioningServiceType.swift */; };
 		FB1E0A3E1DE0120400738DB2 /* UserAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A3D1DE0120400738DB2 /* UserAuthenticationToken.swift */; };
+		FB1E0A481DE0DB1200738DB2 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A471DE0DB1200738DB2 /* Bindable.swift */; };
+		FB1E0A4E1DE0E11500738DB2 /* InputValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E0A4D1DE0E11500738DB2 /* InputValidationService.swift */; };
 		FB34754A1DCEBAEC00B9873F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3475491DCEBAEC00B9873F /* AppDelegate.swift */; };
 		FB34754C1DCEBAEC00B9873F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34754B1DCEBAEC00B9873F /* ViewController.swift */; };
 		FB34754F1DCEBAEC00B9873F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB34754D1DCEBAEC00B9873F /* Main.storyboard */; };
@@ -26,6 +23,9 @@
 		FB3475541DCEBAEC00B9873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3475521DCEBAEC00B9873F /* LaunchScreen.storyboard */; };
 		FB34755F1DCEBAED00B9873F /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34755E1DCEBAED00B9873F /* ExampleTests.swift */; };
 		FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */; };
+		FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABC1DE124810016627E /* UIViewController+Alert.swift */; };
+		FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */; };
+		FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */; };
 		FB81DFA71DD2A44000EE4615 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA61DD2A44000EE4615 /* User.swift */; };
 		FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */; };
 		FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */; };
@@ -61,16 +61,13 @@
 		890510C594FB2F975E371DD3 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		97F1215CC4667B9D148EDD1A /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB12E5611DD7A672002214A7 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Example.entitlements; path = Example/Example.entitlements; sourceTree = "<group>"; };
-		FB1E0A251DDFDD3200738DB2 /* DataSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceType.swift; sourceTree = "<group>"; };
-		FB1E0A271DDFDE6F00738DB2 /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		FB1E0A2A1DDFDECE00738DB2 /* RealmColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmColorModel.swift; sourceTree = "<group>"; };
-		FB1E0A2C1DDFE01F00738DB2 /* RealmInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmInitializable.swift; sourceTree = "<group>"; };
 		FB1E0A2F1DDFE1CA00738DB2 /* Results+toArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Results+toArray.swift"; sourceTree = "<group>"; };
 		FB1E0A341DE008A000738DB2 /* UserSignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignupViewModel.swift; sourceTree = "<group>"; };
-		FB1E0A361DE00A4F00738DB2 /* RealmUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUserModel.swift; sourceTree = "<group>"; };
 		FB1E0A391DE00C9700738DB2 /* UserProvisioningService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProvisioningService.swift; sourceTree = "<group>"; };
 		FB1E0A3B1DE00CB800738DB2 /* ProvisioningServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisioningServiceType.swift; sourceTree = "<group>"; };
 		FB1E0A3D1DE0120400738DB2 /* UserAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthenticationToken.swift; sourceTree = "<group>"; };
+		FB1E0A471DE0DB1200738DB2 /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		FB1E0A4D1DE0E11500738DB2 /* InputValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidationService.swift; sourceTree = "<group>"; };
 		FB3475461DCEBAEC00B9873F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3475491DCEBAEC00B9873F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB34754B1DCEBAEC00B9873F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +79,9 @@
 		FB34755E1DCEBAED00B9873F /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		FB3475601DCEBAED00B9873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		FB654ABC1DE124810016627E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Convenience.swift"; sourceTree = "<group>"; };
+		FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSignupViewModel+Delegate.swift"; sourceTree = "<group>"; };
 		FB81DFA61DD2A44000EE4615 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -139,15 +139,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FB1E0A291DDFDEB300738DB2 /* Realm Models */ = {
-			isa = PBXGroup;
-			children = (
-				FB1E0A2A1DDFDECE00738DB2 /* RealmColorModel.swift */,
-				FB1E0A361DE00A4F00738DB2 /* RealmUserModel.swift */,
-			);
-			name = "Realm Models";
-			sourceTree = "<group>";
-		};
 		FB1E0A2E1DDFE05300738DB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,14 +159,6 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		FB1E0A321DDFE6E100738DB2 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				FB1E0A271DDFDE6F00738DB2 /* RealmService.swift */,
-			);
-			name = Persistence;
-			sourceTree = "<group>";
-		};
 		FB1E0A331DDFE6EC00738DB2 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,13 +173,6 @@
 				FB1E0A391DE00C9700738DB2 /* UserProvisioningService.swift */,
 			);
 			name = UserService;
-			sourceTree = "<group>";
-		};
-		FB1E0A3F1DE0B21900738DB2 /* RealmService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = RealmService;
 			sourceTree = "<group>";
 		};
 		FB34753D1DCEBAEC00B9873F = {
@@ -250,12 +226,11 @@
 		FB3475691DCEBBEC00B9873F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FB1E0A3F1DE0B21900738DB2 /* RealmService */,
 				FB1E0A381DE00C5900738DB2 /* UserService */,
 				FB1E0A331DDFE6EC00738DB2 /* Authorization */,
-				FB1E0A321DDFE6E100738DB2 /* Persistence */,
 				FB1E0A311DDFE6D200738DB2 /* Networking */,
 				FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */,
+				FB1E0A4D1DE0E11500738DB2 /* InputValidationService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -265,6 +240,8 @@
 			children = (
 				FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */,
 				FB1E0A2F1DDFE1CA00738DB2 /* Results+toArray.swift */,
+				FB654ABC1DE124810016627E /* UIViewController+Alert.swift */,
+				FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -272,11 +249,10 @@
 		FB81DFAE1DD2AA4100EE4615 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				FB1E0A251DDFDD3200738DB2 /* DataSourceType.swift */,
 				FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */,
 				FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */,
-				FB1E0A2C1DDFE01F00738DB2 /* RealmInitializable.swift */,
 				FB1E0A3B1DE00CB800738DB2 /* ProvisioningServiceType.swift */,
+				FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -372,6 +348,7 @@
 				FBE523471DCFE20A006B3B1C /* Functions.swift */,
 				FBA356EF1DD5355100DEEBF1 /* Constants.swift */,
 				FBA356F11DD5371600DEEBF1 /* AppStorage.swift */,
+				FB1E0A471DE0DB1200738DB2 /* Bindable.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -380,7 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				FB1E0A2E1DDFE05300738DB2 /* Models */,
-				FB1E0A291DDFDEB300738DB2 /* Realm Models */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -594,29 +570,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB1E0A261DDFDD3200738DB2 /* DataSourceType.swift in Sources */,
+				FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */,
 				FB34754C1DCEBAEC00B9873F /* ViewController.swift in Sources */,
 				FBA356FC1DD53D5B00DEEBF1 /* UserSignupViewController.swift in Sources */,
+				FB1E0A4E1DE0E11500738DB2 /* InputValidationService.swift in Sources */,
 				FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */,
 				FBA356F81DD53B7000DEEBF1 /* UserService.swift in Sources */,
-				FB1E0A2D1DDFE01F00738DB2 /* RealmInitializable.swift in Sources */,
 				FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */,
 				FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */,
 				FBE5234A1DCFEE7C006B3B1C /* ColorsService.swift in Sources */,
 				FB1E0A3C1DE00CB800738DB2 /* ProvisioningServiceType.swift in Sources */,
 				FBE523481DCFE20A006B3B1C /* Functions.swift in Sources */,
-				FB1E0A2B1DDFDECE00738DB2 /* RealmColorModel.swift in Sources */,
+				FB1E0A481DE0DB1200738DB2 /* Bindable.swift in Sources */,
 				FB1E0A301DDFE1CA00738DB2 /* Results+toArray.swift in Sources */,
+				FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */,
 				FB1E0A351DE008A000738DB2 /* UserSignupViewModel.swift in Sources */,
-				FB1E0A281DDFDE6F00738DB2 /* RealmService.swift in Sources */,
 				FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */,
 				FBE523431DCFDB9C006B3B1C /* Provider.swift in Sources */,
 				FB34754A1DCEBAEC00B9873F /* AppDelegate.swift in Sources */,
 				FBA356FA1DD53CF600DEEBF1 /* CredentialsType.swift in Sources */,
 				FBA356F21DD5371600DEEBF1 /* AppStorage.swift in Sources */,
+				FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */,
 				FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */,
 				FB81DFA71DD2A44000EE4615 /* User.swift in Sources */,
-				FB1E0A371DE00A4F00738DB2 /* RealmUserModel.swift in Sources */,
 				FBA356F01DD5355100DEEBF1 /* Constants.swift in Sources */,
 				FB1E0A3E1DE0120400738DB2 /* UserAuthenticationToken.swift in Sources */,
 				FBE5234D1DCFEFC4006B3B1C /* Color.swift in Sources */,

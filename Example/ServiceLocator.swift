@@ -42,8 +42,13 @@ class ServiceLocator {
     }
     
     // Returns the UserSignupViewController (the rootViewController) with its dependencies.
-    static func provideRootViewControllerWithService() -> UserSignupViewController {
+    static func provideRootViewControllerWithViewModel() -> UserSignupViewController {
+        let ivs = UserSignupInputValidationService()
+        let networkService = UserService()
+        let ups = NewUserProvisioningService(networkService: networkService, keychainService: provideKeychainService())
+        let viewModel = UserSignupViewModel(inputValidationService: ivs, userProvisioningService: ups)
         let viewController = provideUIViewControllerWithName(name: "UserSignupViewController") as! UserSignupViewController
+        viewController.viewModel = viewModel
         return viewController
     }
     

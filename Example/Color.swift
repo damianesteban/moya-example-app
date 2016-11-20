@@ -28,12 +28,12 @@ extension ColorModel: JSONDeserializable {
 }
 
 /// Conforms to RealmInitializable
-extension ColorModel: RealmInitializable {
-    typealias RealmObject = RealmColorModel
-    init?(object: RealmObject) {
-        self.id = object.id
-        self.name = object.name
-        self.year = object.year
-        self.pantoneValue = object.pantoneValue
-    }
-}
+//extension ColorModel: RealmInitializable {
+//    typealias RealmObject = RealmColorModel
+//    init?(object: RealmObject) {
+//        self.id = object.id
+//        self.name = object.name
+//        self.year = object.year
+//        self.pantoneValue = object.pantoneValue
+//    }
+//}

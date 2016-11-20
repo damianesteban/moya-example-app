@@ -23,10 +23,10 @@ extension UserModel: JSONDeserializable {
 }
 
 /// Conforms to RealmInitializable
-extension UserModel: RealmInitializable {
-    typealias RealmObject = RealmUserModel
-    init?(object: RealmObject) {
-        self.username = object.username
-        self.password = object.password
-    }
-}
+//extension UserModel: RealmInitializable {
+//    typealias RealmObject = RealmUserModel
+//    init?(object: RealmObject) {
+//        self.username = object.username
+//        self.password = object.password
+//    }
+//}
