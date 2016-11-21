@@ -38,6 +38,9 @@
 		FBA356FA1DD53CF600DEEBF1 /* CredentialsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */; };
 		FBA356FC1DD53D5B00DEEBF1 /* UserSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356FB1DD53D5B00DEEBF1 /* UserSignupViewController.swift */; };
 		FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2E3931DCEBF1000EB24FB /* DomainError.swift */; };
+		FBBAD0511DE28417005226BB /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD0501DE28417005226BB /* RealmModel.swift */; };
+		FBBAD0531DE2845C005226BB /* RealmInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD0521DE2845C005226BB /* RealmInitializable.swift */; };
+		FBBAD0551DE284EB005226BB /* RealmRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD0541DE284EB005226BB /* RealmRepositoryType.swift */; };
 		FBE523431DCFDB9C006B3B1C /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523421DCFDB9C006B3B1C /* Provider.swift */; };
 		FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523441DCFE00E006B3B1C /* JSON.swift */; };
 		FBE523481DCFE20A006B3B1C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523471DCFE20A006B3B1C /* Functions.swift */; };
@@ -96,6 +99,9 @@
 		FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsType.swift; sourceTree = "<group>"; };
 		FBA356FB1DD53D5B00DEEBF1 /* UserSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignupViewController.swift; sourceTree = "<group>"; };
 		FBB2E3931DCEBF1000EB24FB /* DomainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		FBBAD0501DE28417005226BB /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		FBBAD0521DE2845C005226BB /* RealmInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmInitializable.swift; sourceTree = "<group>"; };
+		FBBAD0541DE284EB005226BB /* RealmRepositoryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmRepositoryType.swift; sourceTree = "<group>"; };
 		FBE523421DCFDB9C006B3B1C /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		FBE523441DCFE00E006B3B1C /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		FBE523471DCFE20A006B3B1C /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -171,12 +177,12 @@
 			name = Authorization;
 			sourceTree = "<group>";
 		};
-		FB1E0A381DE00C5900738DB2 /* UserService */ = {
+		FB1E0A381DE00C5900738DB2 /* Provisioning */ = {
 			isa = PBXGroup;
 			children = (
 				FB1E0A391DE00C9700738DB2 /* UserProvisioningService.swift */,
 			);
-			name = UserService;
+			name = Provisioning;
 			sourceTree = "<group>";
 		};
 		FB34753D1DCEBAEC00B9873F = {
@@ -230,7 +236,8 @@
 		FB3475691DCEBBEC00B9873F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FB1E0A381DE00C5900738DB2 /* UserService */,
+				FBBAD04E1DE2831F005226BB /* Repository */,
+				FB1E0A381DE00C5900738DB2 /* Provisioning */,
 				FB1E0A331DDFE6EC00738DB2 /* Authorization */,
 				FB1E0A311DDFE6D200738DB2 /* Networking */,
 				FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */,
@@ -258,6 +265,8 @@
 				FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */,
 				FB1E0A3B1DE00CB800738DB2 /* ProvisioningServiceType.swift */,
 				FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */,
+				FBBAD0521DE2845C005226BB /* RealmInitializable.swift */,
+				FBBAD0541DE284EB005226BB /* RealmRepositoryType.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -346,6 +355,21 @@
 			name = Tests;
 			sourceTree = "<group>";
 		};
+		FBBAD04E1DE2831F005226BB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		FBBAD04F1DE28407005226BB /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				FBBAD0501DE28417005226BB /* RealmModel.swift */,
+			);
+			name = RealmModels;
+			sourceTree = "<group>";
+		};
 		FBE523461DCFE1F1006B3B1C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +386,7 @@
 		FBE5234B1DCFEFB9006B3B1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FBBAD04F1DE28407005226BB /* RealmModels */,
 				FB1E0A2E1DDFE05300738DB2 /* Models */,
 			);
 			name = Models;
@@ -577,9 +602,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */,
+				FBBAD0511DE28417005226BB /* RealmModel.swift in Sources */,
 				FB34754C1DCEBAEC00B9873F /* ViewController.swift in Sources */,
 				FBA356FC1DD53D5B00DEEBF1 /* UserSignupViewController.swift in Sources */,
 				FB1E0A4E1DE0E11500738DB2 /* InputValidationService.swift in Sources */,
+				FBBAD0531DE2845C005226BB /* RealmInitializable.swift in Sources */,
 				FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */,
 				FBA356F81DD53B7000DEEBF1 /* UserService.swift in Sources */,
 				FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */,
@@ -599,6 +626,7 @@
 				FBA356FA1DD53CF600DEEBF1 /* CredentialsType.swift in Sources */,
 				FBA356F21DD5371600DEEBF1 /* AppStorage.swift in Sources */,
 				FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */,
+				FBBAD0551DE284EB005226BB /* RealmRepositoryType.swift in Sources */,
 				FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */,
 				FB81DFA71DD2A44000EE4615 /* User.swift in Sources */,
 				FBA356F01DD5355100DEEBF1 /* Constants.swift in Sources */,
