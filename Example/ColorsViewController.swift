@@ -35,8 +35,6 @@ class ColorsViewController: UIViewController {
             }
             tableView.reloadData()
         }
-        log
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -48,7 +46,6 @@ extension ColorsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return viewModel.numberOfItems
     }
     

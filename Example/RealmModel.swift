@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-// A RealmColorModel - this is in the Infrastructure 
+// A RealmColorModel - Infrastructure Level
 class RealmColorModel: Object {
     dynamic var id = UUID.init().uuidString.lowercased()
     dynamic var name = ""

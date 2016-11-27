@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 // A Repository for Realm Objects
-protocol RealmRepositoryType {
+protocol RealmDataStoreType {
     var realm: Realm { get set }
     func fetchAllObjects<T: Object>(type: T.Type) -> Results<T>?
     func fetchObjectById<T: Object>(id: String, type: T.Type) -> Results<T>?
@@ -19,7 +19,7 @@ protocol RealmRepositoryType {
     func clearAllObjects()
 }
 
-extension RealmRepositoryType {
+extension RealmDataStoreType {
     
     // Fetches Realm Results of the provided Object Type
     func fetchAllObjects<T: Object>(type: T.Type) -> Results<T>? {
