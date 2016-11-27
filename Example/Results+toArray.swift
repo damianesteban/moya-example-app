@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+// An extension to convert Realm Results to an Array.
 extension Results {
     func toArray<T>(ofType: T.Type) -> [T] {
         return flatMap { $0 as? T }

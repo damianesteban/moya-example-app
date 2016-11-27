@@ -8,6 +8,7 @@
 
 import Foundation
 
+// UserSignupViewModel and Delegate protocols
 protocol UserSignupViewModelType {
     weak var delegate: UserSignupViewModelDelegate? { get set }
     var usernamePlaceholderText: String { get set }

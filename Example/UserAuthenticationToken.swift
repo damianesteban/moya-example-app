@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// UserAuthenticationToken
+// UserAuthenticationToken
 struct UserAuthenticationToken: CredentialType {
     let key = Constants.UserTokenKey
     let value: String

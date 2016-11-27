@@ -11,7 +11,7 @@ import Result
 import Moya
 
 /** NetworkServiceType: Provides basic methods for Networking Services with Moya
-    NOTE: See `APINameService` for an example implementation
+    NOTE: See `ColorsService` for an example implementation
 **/
 
 protocol NetworkServiceType {

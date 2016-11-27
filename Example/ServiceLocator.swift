@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 // ServiceLocator.
 // Read more about this design pattern here: https://msdn.microsoft.com/en-us/library/ff648968.aspx
@@ -67,6 +68,11 @@ class ServiceLocator {
             userProvisioningService: userProvisioningService)
         let viewController = provideUIViewControllerWithName(name: "UserSignupViewController") as! UserSignupViewController
         viewController.viewModel = viewModel
+        return viewController
+    }
+    
+    static func provideListViewControllerWithViewModel() -> ColorsViewController {
+        let viewController = ColorsViewController()
         return viewController
     }
 }

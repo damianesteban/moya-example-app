@@ -23,6 +23,8 @@
 		FB3475541DCEBAEC00B9873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3475521DCEBAEC00B9873F /* LaunchScreen.storyboard */; };
 		FB34755F1DCEBAED00B9873F /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34755E1DCEBAED00B9873F /* ExampleTests.swift */; };
 		FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */; };
+		FB544ABE1DE3A5C000EE1105 /* ColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB544ABD1DE3A5C000EE1105 /* ColorsViewModel.swift */; };
+		FB544AC01DE3A62700EE1105 /* ListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */; };
 		FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABC1DE124810016627E /* UIViewController+Alert.swift */; };
 		FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */; };
 		FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */; };
@@ -84,6 +86,8 @@
 		FB34755E1DCEBAED00B9873F /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		FB3475601DCEBAED00B9873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		FB544ABD1DE3A5C000EE1105 /* ColorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewModel.swift; sourceTree = "<group>"; };
+		FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModelType.swift; sourceTree = "<group>"; };
 		FB654ABC1DE124810016627E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Convenience.swift"; sourceTree = "<group>"; };
 		FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSignupViewModel+Delegate.swift"; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */,
 				FBBAD0521DE2845C005226BB /* RealmInitializable.swift */,
 				FBBAD0541DE284EB005226BB /* RealmRepositoryType.swift */,
+				FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1E0A341DE008A000738DB2 /* UserSignupViewModel.swift */,
+				FB544ABD1DE3A5C000EE1105 /* ColorsViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -627,10 +633,12 @@
 				FBA356F21DD5371600DEEBF1 /* AppStorage.swift in Sources */,
 				FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */,
 				FBBAD0551DE284EB005226BB /* RealmRepositoryType.swift in Sources */,
+				FB544AC01DE3A62700EE1105 /* ListViewModelType.swift in Sources */,
 				FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */,
 				FB81DFA71DD2A44000EE4615 /* User.swift in Sources */,
 				FBA356F01DD5355100DEEBF1 /* Constants.swift in Sources */,
 				FB1E0A3E1DE0120400738DB2 /* UserAuthenticationToken.swift in Sources */,
+				FB544ABE1DE3A5C000EE1105 /* ColorsViewModel.swift in Sources */,
 				FBE5234D1DCFEFC4006B3B1C /* Color.swift in Sources */,
 				FBA356EE1DD534EB00DEEBF1 /* KeychainService.swift in Sources */,
 				FB1E0A3A1DE00C9700738DB2 /* UserProvisioningService.swift in Sources */,

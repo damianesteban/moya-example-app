@@ -9,6 +9,7 @@
 import Foundation
 import Result
 
+// Credential and CredentialsServiceType
 protocol CredentialType {
     var key: String { get }
     var value: String { get }

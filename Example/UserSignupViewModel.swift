@@ -23,7 +23,7 @@ class UserSignupViewModel: UserSignupViewModelType {
     
     // Service classes
     private let inputValidationService: UserSignupInputValidationService
-    private var userProvisioningService: NewUserProvisioningService
+    private let userProvisioningService: NewUserProvisioningService
     
     // Properties
     private var usernameText: String = ""
@@ -57,7 +57,7 @@ class UserSignupViewModel: UserSignupViewModelType {
     }
     
     // Makes the network request via the service class and either displays an error or moves to the next view.
-    func submitUserSignupInformation() {
+    private func submitUserSignupInformation() {
         userProvisioningService.provisionNewUser(with: usernameText, password: passwordText) { (success, error) in
             if error != nil {
                 self.delegate?.showError()

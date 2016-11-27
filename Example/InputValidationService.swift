@@ -13,6 +13,7 @@ protocol InputValidationServiceType {
     func validatePassword(_ password: String?) throws
 }
 
+// Basic input validation service.
 class UserSignupInputValidationService: InputValidationServiceType {
     func validateUsername(_ username: String?) throws {
         guard let username = username, !username.isEmpty else {

@@ -8,25 +8,16 @@
 
 import Foundation
 
-/// A User
+// A User
 struct UserModel {
     let username: String
     let password: String
 }
 
-// Conforms to JSONODeserializable
+// Conforms to JSONDeserializable
 extension UserModel: JSONDeserializable {
     init(jsonRepresentation: JSONDictionary) throws {
         username = try decode(jsonRepresentation, key: "username")
         password = try decode(jsonRepresentation, key: "password")
     }
 }
-
-/// Conforms to RealmInitializable
-//extension UserModel: RealmInitializable {
-//    typealias RealmObject = RealmUserModel
-//    init?(object: RealmObject) {
-//        self.username = object.username
-//        self.password = object.password
-//    }
-//}

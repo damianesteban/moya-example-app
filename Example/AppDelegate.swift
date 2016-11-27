@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureWindow()
         configureNavigationBarStyle()
         window?.makeKeyAndVisible()
+
+        print(Realm.Configuration.defaultConfiguration)
         return true
     }
     

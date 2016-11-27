@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+// Convenience initializer for Domain Objects
 protocol RealmInitializable {
     associatedtype Object
     init?(object: Object)

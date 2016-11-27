@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// UIColor extension for hex values
 extension UIColor {
     
     convenience init(rgba: String) {

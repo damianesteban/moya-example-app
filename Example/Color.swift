@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-/// A Color
+// A Color - this is in the Domain
 struct ColorModel {
     let id: String
     let name: String
@@ -27,13 +27,13 @@ extension ColorModel: JSONDeserializable {
     }
 }
 
-/// Conforms to RealmInitializable
-//extension ColorModel: RealmInitializable {
-//    typealias RealmObject = RealmColorModel
-//    init?(object: RealmObject) {
-//        self.id = object.id
-//        self.name = object.name
-//        self.year = object.year
-//        self.pantoneValue = object.pantoneValue
-//    }
-//}
+// Conforms to RealmInitializable
+extension ColorModel: RealmInitializable {
+    typealias RealmObject = RealmColorModel
+    init?(object: RealmObject) {
+        self.id = object.id
+        self.name = object.name
+        self.year = object.year
+        self.pantoneValue = object.pantoneValue
+    }
+}
