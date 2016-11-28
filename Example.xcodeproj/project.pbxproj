@@ -23,7 +23,7 @@
 		FB3475541DCEBAEC00B9873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3475521DCEBAEC00B9873F /* LaunchScreen.storyboard */; };
 		FB34755F1DCEBAED00B9873F /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34755E1DCEBAED00B9873F /* ExampleTests.swift */; };
 		FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */; };
-		FB544ABE1DE3A5C000EE1105 /* ColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB544ABD1DE3A5C000EE1105 /* ColorsViewModel.swift */; };
+		FB544ABE1DE3A5C000EE1105 /* ColorsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB544ABD1DE3A5C000EE1105 /* ColorsListViewModel.swift */; };
 		FB544AC01DE3A62700EE1105 /* ListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */; };
 		FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABC1DE124810016627E /* UIViewController+Alert.swift */; };
 		FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */; };
@@ -40,8 +40,6 @@
 		FBA356FA1DD53CF600DEEBF1 /* CredentialsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */; };
 		FBA356FC1DD53D5B00DEEBF1 /* UserSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356FB1DD53D5B00DEEBF1 /* UserSignupViewController.swift */; };
 		FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2E3931DCEBF1000EB24FB /* DomainError.swift */; };
-		FBBAD0511DE28417005226BB /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD0501DE28417005226BB /* RealmModel.swift */; };
-		FBBAD0531DE2845C005226BB /* RealmInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD0521DE2845C005226BB /* RealmInitializable.swift */; };
 		FBBAD0551DE284EB005226BB /* RealmDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD0541DE284EB005226BB /* RealmDataStoreType.swift */; };
 		FBE523431DCFDB9C006B3B1C /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523421DCFDB9C006B3B1C /* Provider.swift */; };
 		FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE523441DCFE00E006B3B1C /* JSON.swift */; };
@@ -86,7 +84,7 @@
 		FB34755E1DCEBAED00B9873F /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		FB3475601DCEBAED00B9873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB34756A1DCEBBFC00B9873F /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
-		FB544ABD1DE3A5C000EE1105 /* ColorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewModel.swift; sourceTree = "<group>"; };
+		FB544ABD1DE3A5C000EE1105 /* ColorsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsListViewModel.swift; sourceTree = "<group>"; };
 		FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModelType.swift; sourceTree = "<group>"; };
 		FB654ABC1DE124810016627E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FB654ABE1DE124CA0016627E /* UIAlertController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Convenience.swift"; sourceTree = "<group>"; };
@@ -103,8 +101,6 @@
 		FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsType.swift; sourceTree = "<group>"; };
 		FBA356FB1DD53D5B00DEEBF1 /* UserSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignupViewController.swift; sourceTree = "<group>"; };
 		FBB2E3931DCEBF1000EB24FB /* DomainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
-		FBBAD0501DE28417005226BB /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
-		FBBAD0521DE2845C005226BB /* RealmInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmInitializable.swift; sourceTree = "<group>"; };
 		FBBAD0541DE284EB005226BB /* RealmDataStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataStoreType.swift; sourceTree = "<group>"; };
 		FBE523421DCFDB9C006B3B1C /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		FBE523441DCFE00E006B3B1C /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -269,7 +265,6 @@
 				FBA356F91DD53CF600DEEBF1 /* CredentialsType.swift */,
 				FB1E0A3B1DE00CB800738DB2 /* ProvisioningServiceType.swift */,
 				FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */,
-				FBBAD0521DE2845C005226BB /* RealmInitializable.swift */,
 				FBBAD0541DE284EB005226BB /* RealmDataStoreType.swift */,
 				FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */,
 			);
@@ -280,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1E0A341DE008A000738DB2 /* UserSignupViewModel.swift */,
-				FB544ABD1DE3A5C000EE1105 /* ColorsViewModel.swift */,
+				FB544ABD1DE3A5C000EE1105 /* ColorsListViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -368,14 +363,6 @@
 			name = Repository;
 			sourceTree = "<group>";
 		};
-		FBBAD04F1DE28407005226BB /* RealmModels */ = {
-			isa = PBXGroup;
-			children = (
-				FBBAD0501DE28417005226BB /* RealmModel.swift */,
-			);
-			name = RealmModels;
-			sourceTree = "<group>";
-		};
 		FBE523461DCFE1F1006B3B1C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,7 +379,6 @@
 		FBE5234B1DCFEFB9006B3B1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FBBAD04F1DE28407005226BB /* RealmModels */,
 				FB1E0A2E1DDFE05300738DB2 /* Models */,
 			);
 			name = Models;
@@ -608,11 +594,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */,
-				FBBAD0511DE28417005226BB /* RealmModel.swift in Sources */,
 				FB34754C1DCEBAEC00B9873F /* ViewController.swift in Sources */,
 				FBA356FC1DD53D5B00DEEBF1 /* UserSignupViewController.swift in Sources */,
 				FB1E0A4E1DE0E11500738DB2 /* InputValidationService.swift in Sources */,
-				FBBAD0531DE2845C005226BB /* RealmInitializable.swift in Sources */,
 				FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */,
 				FBA356F81DD53B7000DEEBF1 /* UserService.swift in Sources */,
 				FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */,
@@ -638,7 +622,7 @@
 				FB81DFA71DD2A44000EE4615 /* User.swift in Sources */,
 				FBA356F01DD5355100DEEBF1 /* Constants.swift in Sources */,
 				FB1E0A3E1DE0120400738DB2 /* UserAuthenticationToken.swift in Sources */,
-				FB544ABE1DE3A5C000EE1105 /* ColorsViewModel.swift in Sources */,
+				FB544ABE1DE3A5C000EE1105 /* ColorsListViewModel.swift in Sources */,
 				FBE5234D1DCFEFC4006B3B1C /* Color.swift in Sources */,
 				FBA356EE1DD534EB00DEEBF1 /* KeychainService.swift in Sources */,
 				FB1E0A3A1DE00C9700738DB2 /* UserProvisioningService.swift in Sources */,

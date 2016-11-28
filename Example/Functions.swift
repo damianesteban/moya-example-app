@@ -10,6 +10,12 @@ import Foundation
 import Result
 import Moya
 
+// NOTE: Normally I would *not* force cast like this.
+func objectToDictionary(object: Any) -> JSONDictionary {
+    let dictionary = object as! JSONDictionary
+    return dictionary
+}
+
 func parseObjectToDictionary(object: Any) -> Result<JSONDictionary, DomainError> {
     guard let dictionary = object as? JSONDictionary else {
         return Result.failure(DomainError(message: "Unable to parse object to dictionary"))
@@ -27,10 +33,11 @@ func parseDictionaryToJSONArray(dictionary: JSONDictionary) -> Result<[JSONDicti
 }
 
 func parseArrayToObjects<T>(array: [JSONDictionary]) -> Result<[T], DomainError> where T: JSONDeserializable {
+    print(array)
     do {
         let objects: [T] = try array.flatMap { try T(jsonRepresentation: $0) }
         return Result.success(objects)
-    } catch _ {
-        return Result.failure(DomainError(message: "Unable to parse array to objects"))
+    } catch let error {
+        return Result.failure(DomainError(message: error.localizedDescription))
     }
 }

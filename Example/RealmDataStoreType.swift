@@ -12,23 +12,24 @@ import RealmSwift
 // A Repository for Realm Objects
 protocol RealmDataStoreType {
     var realm: Realm { get set }
-    func fetchAllObjects<T: Object>(type: T.Type) -> Results<T>?
-    func fetchObjectById<T: Object>(id: String, type: T.Type) -> Results<T>?
+    func fetchAllObjects<T: Object>(type: T.Type) -> Results<T>
+    func fetchObjectById<T: Object>(id: String, type: T.Type) -> Results<T>
     func insertOrUpdateObject(object: Object)
-    func deleteObjectById(id: String)
+    func insertOrUpdateObjects(objects: [Object])
+    func deleteObjectById<T: Object>(id: String, type: T.Type)
     func clearAllObjects()
 }
 
 extension RealmDataStoreType {
     
     // Fetches Realm Results of the provided Object Type
-    func fetchAllObjects<T: Object>(type: T.Type) -> Results<T>? {
+    func fetchAllObjects<T: Object>(type: T.Type) -> Results<T> {
         let results = realm.objects(type)
         return results
     }
     
     // Fetches Realm Resultsby id of the provided Object Type
-    func fetchObjectById<T: Object>(id: String, type: T.Type) -> Results<T>? {
+    func fetchObjectById<T: Object>(id: String, type: T.Type) -> Results<T> {
         let predicate = NSPredicate(format: "id = %@", id)
         let results = realm.objects(type).filter(predicate)
         return results
@@ -38,7 +39,17 @@ extension RealmDataStoreType {
     func insertOrUpdateObject(object: Object) {
         do {
             try realm.write {
-                realm.add(object)
+                realm.add(object, update: true)
+            }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func insertOrUpdateObjects(objects: [Object]) {
+        do {
+            try realm.write {
+                realm.add(objects, update: true)
             }
         } catch let error {
             print(error)
@@ -48,7 +59,7 @@ extension RealmDataStoreType {
     // Deletes a Realm Object by id
     func deleteObjectById<T: Object>(id: String, type: T.Type) {
         let results = fetchObjectById(id: id, type: type)
-        if let results = results?.first {
+        if let results = results.first {
             do {
                 try realm.write {
                     realm.delete(results)

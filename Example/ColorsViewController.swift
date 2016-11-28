@@ -17,19 +17,23 @@ class ColorsViewController: UIViewController {
     // MARK: Properties
     
     // Called when the user selects a color
-    var didSelectColor: (RealmColorModel) -> Void = {_ in }
+    var didSelectColor: (ColorModel) -> Void = {_ in }
     
+   // Realm NotificationToken
     var notifications: NotificationToken?
-    var viewModel: ColorsListViewModel = {
-        let realm = try! Realm()
-        return ColorsListViewModel(realm: realm)
-    }()
+    
+    // ViewModel
+    var viewModel: ColorsListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        // Whenever the ViewModel's didUpdate closure is called the tableView will reload data.
-        notifications = viewModel.results.addNotificationBlock { [weak self] changes in
+        // Fetches the objects from the server
+        viewModel?.fetchAndUpdateColors()
+        
+        // When the Realm Collection receives a notification the tableView is reloaded.
+        // NOTE: This is only a basic example of what can be done with Realm notifications.
+        notifications = viewModel?.results.addNotificationBlock { [weak self] changes in
             guard let tableView = self?.tableView else {
                 return
             }
@@ -46,15 +50,22 @@ extension ColorsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else {
+            fatalError("No viewmodel present")
+        }
         return viewModel.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel else {
+            fatalError("No viewmodel present")
+        }
+        
         let item = viewModel.item(at: indexPath.row)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
             fatalError("No cell available for reuse")
         }
-        // Needs Implementation
+        
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.pantoneValue
         

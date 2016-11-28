@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: Add appcoordinator / appcontroller
     // Installs the root viewcontroller into the UIWindow
     private func installRootViewController(into window: UIWindow?) {
-        let viewController = ServiceLocator.provideRootViewControllerWithViewModel()
+        let viewController = ServiceLocator.provideListViewControllerWithViewModel()
         window?.rootViewController = viewController
     }
     

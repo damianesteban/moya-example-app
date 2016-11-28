@@ -17,7 +17,7 @@ import Moya
 protocol NetworkServiceType {
     var provider: MoyaProvider<APIName> { get set }
     init(provider: MoyaProvider<APIName>)
-    func requestJSON(target: APIName, completion: @escaping (Result<JSONDictionary, DomainError>) -> Void)
+    func requestJSON(target: APIName, completion: @escaping (Result<Any, DomainError>) -> Void)
     func requestObject<T: JSONDeserializable>(target: APIName, completion: @escaping (Result<T, DomainError>) -> Void)
     func requestObjects<T: JSONDeserializable>(target: APIName, completion: @escaping (Result<[T], DomainError>) -> Void)
 }
@@ -33,14 +33,13 @@ extension NetworkServiceType {
     }
     
     // Requests JSON from the API via the Provider
-    func requestJSON(target: APIName, completion: @escaping (Result<JSONDictionary, DomainError>) -> Void) {
+    func requestJSON(target: APIName, completion: @escaping (Result<Any, DomainError>) -> Void) {
         provider.request(target) { result in
             switch result {
             case let .success(response):
                 do {
                     let json = try response.mapJSON()
-                    let jsonParsingResult = parseObjectToDictionary(object: json)
-                    completion(jsonParsingResult)
+                    completion(.success(json))
                 } catch let error {
                     completion(Result.failure(DomainError(message: error.localizedDescription)))
                 }
@@ -56,7 +55,8 @@ extension NetworkServiceType {
             switch result {
             case let .success(json):
                 do {
-                    let object = try T(jsonRepresentation: json)
+                    let dictionary = objectToDictionary(object: json)
+                    let object = try T(jsonRepresentation: dictionary)
                     completion(Result.success(object))
                 } catch let error {
                     completion(Result.failure(DomainError(message: error.localizedDescription)))
@@ -72,14 +72,12 @@ extension NetworkServiceType {
         self.requestJSON(target: target) { result in
             switch result {
             case let .success(json):
-                    let result = parseDictionaryToJSONArray(dictionary: json)
-                    switch result {
-                    case let .success(json):
-                        let objectArrayResult: Result<[T], DomainError> = parseArrayToObjects(array: json)
-                        completion(objectArrayResult)
-                    case .failure(_):
-                        completion(Result.failure(DomainError(message: "Unable to request objects")))
-                    }
+                let dictionary = objectToDictionary(object: json)
+                let array = dictionary["data"] as! [JSONDictionary]
+                print("ARRAY: \(array)")
+                let objects: [T] = array.flatMap { try? T(jsonRepresentation: $0) }
+                print("OBJECTS: \(objects)")
+                completion(Result.success(objects))
             case .failure(_):
                 completion(Result.failure(DomainError(message: "Unable to request objects")))
             }

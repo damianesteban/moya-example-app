@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1pa-ds-oF2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,18 +60,17 @@
                         <outlet property="passwordTextField" destination="i3u-Kl-1Sz" id="fY8-9P-Ik5"/>
                         <outlet property="signupButton" destination="3GK-hQ-1t0" id="dE4-QI-P1W"/>
                         <outlet property="usernameTextField" destination="JPB-S0-Mni" id="LeQ-Cz-j5R"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showColorsView" id="ByN-Bv-dHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKv-4N-geI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="8RN-g2-Emt" customClass="UserSignupPresentationControl" customModule="Example" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-1313" y="-47"/>
+            <point key="canvasLocation" x="-969" y="-32"/>
         </scene>
-        <!--Colors View Controller-->
+        <!--ColorsViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ColorsViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorsViewController" title="ColorsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ColorsViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -125,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.2" y="11.244377811094454"/>
+            <point key="canvasLocation" x="-1802" y="-33"/>
         </scene>
     </scenes>
 </document>

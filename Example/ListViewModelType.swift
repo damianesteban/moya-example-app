@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+// ListViewModel
 protocol ListViewModelType {
     associatedtype ListObject
     var numberOfItems: Int { get }

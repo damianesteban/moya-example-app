@@ -11,16 +11,16 @@ import Moya
 import Result
 
 /// Conforms to the `NetworkServiceType` protocol
-struct ColorsService: NetworkServiceType {
+class ColorsService: NetworkServiceType {
     
     // MARK: - Provider
     var provider: MoyaProvider<APIName>
     
     // Default implementation of the initializer.  We do this because while running the app the Service
     // will always be initialized this way, but for testing we can provide a different MoyaProvider
-    init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>(plugins:
+    required init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>(plugins:
         [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])) {
-        self.init()
+        self.provider = provider
     }
     
     /*  This method makes use of the `requestObjects` method from the protocol extension.

@@ -10,30 +10,21 @@ import Foundation
 import RealmSwift
 
 // A Color - this is in the Domain
-struct ColorModel {
-    let id: String
-    let name: String
-    let year: Int
-    let pantoneValue: String
-}
-
-// Conforms to JSONODeserializable
-extension ColorModel: JSONDeserializable {
-    init(jsonRepresentation: JSONDictionary) throws {
+class ColorModel: Object, JSONDeserializable {
+    dynamic var id = 0
+    dynamic var name = ""
+    dynamic var year = 0
+    dynamic var pantoneValue = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience required init(jsonRepresentation: JSONDictionary) throws {
+        self.init()
         id = try decode(jsonRepresentation, key: "id")
         name = try decode(jsonRepresentation, key: "name")
         year = try decode(jsonRepresentation, key: "year")
         pantoneValue = try decode(jsonRepresentation, key: "pantone_value")
-    }
-}
-
-// Conforms to RealmInitializable
-extension ColorModel: RealmInitializable {
-    typealias RealmObject = RealmColorModel
-    init?(object: RealmObject) {
-        self.id = object.id
-        self.name = object.name
-        self.year = object.year
-        self.pantoneValue = object.pantoneValue
     }
 }

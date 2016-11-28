@@ -60,6 +60,22 @@ class ServiceLocator {
         return newUserProvisioningService
     }
     
+    // Provides an instance of the DataStore
+    private static func provideColorsDataStore() -> ColorsDataStore {
+        let realm = try! Realm()
+        let colorsDataStore = ColorsDataStore(realm: realm)
+        return colorsDataStore
+    }
+    
+    // Provides an instance of ColorsListViewModel
+    private static func providesColorsViewModel() -> ColorsListViewModel {
+        let networkingService = provideColorsService()
+        let dataStore = provideColorsDataStore()
+        let viewModel = ColorsListViewModel(dataStore: dataStore, networkService: networkingService)
+        return viewModel
+    }
+    
+    
     // Returns the UserSignupViewController (the rootViewController) with its dependencies
     static func provideRootViewControllerWithViewModel() -> UserSignupViewController {
         let userProvisioningService = provideNewUserProvisioningService()
@@ -71,8 +87,11 @@ class ServiceLocator {
         return viewController
     }
     
-    static func provideListViewControllerWithViewModel() -> ColorsViewController {
-        let viewController = ColorsViewController()
-        return viewController
+    // Returns the ColorsViewController with its dependencies (for this example it is set as the rootViewController)
+    static func provideListViewControllerWithViewModel() -> UIViewController {
+        let viewController = provideUIViewControllerWithName(name: "ColorsViewController") as! ColorsViewController
+        viewController.viewModel = providesColorsViewModel()
+        let navController = UINavigationController(rootViewController: viewController)
+        return navController
     }
 }
