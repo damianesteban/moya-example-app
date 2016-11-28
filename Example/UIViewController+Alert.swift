@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 extension UIViewController {
     
@@ -30,5 +31,43 @@ extension UIViewController {
     private func displayErrorMessage(message: String) {
         let errorTitle = NSLocalizedString("Error", comment: "Error")
         displayMessage(title: errorTitle, message: message)
+    }
+}
+
+// Convenience Extension for PKHUD
+extension UIViewController {
+    
+    /// Displays a PKHUD activity indicator
+    func displayActivityHUD() {
+        PKHUD.sharedHUD.dimsBackground = true
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+    }
+    
+    /// Display a PKHUD success view
+    func displaySuccessHUD(completion: (() -> Void)? = nil) {
+        delay(seconds: 1) {
+            PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+            PKHUD.sharedHUD.hide(afterDelay: 1.0)
+            if let completion = completion {
+                completion()
+            }
+        }
+    }
+    
+    /// Displays a PKHUD error view
+    func displayErrorHUD(completion: (() -> Void)? = nil) {
+        delay(seconds: 1) {
+            PKHUD.sharedHUD.contentView = PKHUDErrorView()
+            PKHUD.sharedHUD.hide(afterDelay: 1.0)
+            if let completion = completion {
+                completion()
+            }
+        }
+    }
+    
+    /// Hides a PKHUD Activity Indicator
+    func hideActivityIndicator() {
+        PKHUD.sharedHUD.hide(animated: true, completion: nil)
     }
 }

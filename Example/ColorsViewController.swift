@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ColorsViewController: UIViewController {
+class ColorsViewController: UIViewController, UIStateDelegate {
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -24,13 +24,22 @@ class ColorsViewController: UIViewController {
     
     // ViewModel
     var viewModel: ColorsListViewModel?
+    
+    var state: UIState = .loading
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        // Fetches the objects from the server
-        viewModel?.fetchAndUpdateColors()
         
+        // Fetches the objects from the server
+        viewModel?.fetchAndUpdateColors() { _ in
+            print("fetched")
+        }
+        
+        viewModel?.didUpdateState = { state in
+            self.update(state: state)
+            
+        }
         // When the Realm Collection receives a notification the tableView is reloaded.
         // NOTE: This is only a basic example of what can be done with Realm notifications.
         notifications = viewModel?.results.addNotificationBlock { [weak self] changes in
@@ -38,6 +47,19 @@ class ColorsViewController: UIViewController {
                 return
             }
             tableView.reloadData()
+        }
+    }
+    
+    func update(state: UIState) {
+        switch state {
+        case .success:
+            self.hideActivityIndicator()
+            tableView.reloadData()
+        case .loading:
+            self.displayActivityHUD()
+        case .failure(_):
+            self.hideActivityIndicator()
+            self.displayErrorHUD()
         }
     }
 }

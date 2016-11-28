@@ -6,6 +6,7 @@ PODS:
   - Moya/Core (8.0.0-beta.4):
     - Alamofire (~> 4.0)
     - Result (~> 3.0)
+  - PKHUD (4.0.0)
   - Realm (2.0.4):
     - Realm/Headers (= 2.0.4)
   - Realm/Headers (2.0.4)
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - KeychainAccess
   - Moya (= 8.0.0-beta.4)
+  - PKHUD (~> 4.0)
   - RealmSwift
   - SwiftGen
 
@@ -24,11 +26,12 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Moya: bad6f72ec40661f09a8cd85ab470226d2795a485
+  PKHUD: 2bb45c936bb8afa39f3cd33ec14e8cc89f624255
   Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
   RealmSwift: 01e8db006035f16003e6307ae8eae1adccce68db
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: c5ec198a3723d6ae09fa2a9ef8695f1ee400fba5
+PODFILE CHECKSUM: ab9f36e2f634abba22c491c09df388e391344350
 
 COCOAPODS: 1.1.1

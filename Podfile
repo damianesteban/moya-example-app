@@ -8,6 +8,7 @@ target 'Example' do
   pod 'KeychainAccess'
   pod 'SwiftGen'
   pod 'RealmSwift'
+  pod 'PKHUD', '~> 4.0'
 
   target 'ExampleTests' do
     inherit! :search_paths

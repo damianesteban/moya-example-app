@@ -41,3 +41,12 @@ func parseArrayToObjects<T>(array: [JSONDictionary]) -> Result<[T], DomainError>
         return Result.failure(DomainError(message: error.localizedDescription))
     }
 }
+
+// GCD Convenience Function
+func delay(seconds: Int, completion: @escaping (Void) -> (Void)) {
+    let time = DispatchTime.now() + .seconds(seconds)
+    DispatchQueue.main.asyncAfter(deadline: time) {
+        print("delay")
+        completion()
+    }
+}

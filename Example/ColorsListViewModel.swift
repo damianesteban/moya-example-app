@@ -24,9 +24,12 @@ class ColorsListViewModel: ListViewModelType {
     // MARK: - Properties
     typealias ListObject = ColorModel
     var didUpdate: () -> Void = {}
+    var didUpdateState: ((_ state: UIState) -> Void)?
     var results: Results<ColorModel>
     var dataStore: ColorsDataStore
     var networkService: ColorsService
+    
+    var delegate: UIStateDelegate?
     
     var numberOfItems: Int {
         return results.count
@@ -46,15 +49,19 @@ class ColorsListViewModel: ListViewModelType {
     
     // Fetches the objects from the server and updates the Realm.  This can be
     // refactored to be a bit cleaner.
-    func fetchAndUpdateColors() {
-        networkService.getColors(target: .colors) { result in
+    func fetchAndUpdateColors(completion: @escaping (_ state: UIState) -> Void) {
+        self.didUpdateState?(UIState.loading)
+        networkService.getColors(target: .colors) { [weak self] result in
             do {
                 let colors = try result.dematerialize()
-                self.dataStore.insertOrUpdateObjects(objects: colors)
-                self.results = self.dataStore.fetchAllObjects(type: ColorModel.self)
-                self.didUpdate()
+                self?.dataStore.insertOrUpdateObjects(objects: colors)
+                self?.results = (self?.dataStore.fetchAllObjects(type: ColorModel.self))!
+                self?.delegate?.state = .success
+                self?.didUpdateState?(UIState.success)
             } catch let error {
+                self?.delegate?.state = .failure(error)
                 print("Error: \(error)")
+                self?.didUpdateState?(UIState.failure(error))
             }
         }
     }

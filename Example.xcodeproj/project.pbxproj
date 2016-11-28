@@ -33,6 +33,7 @@
 		FB81DFA71DD2A44000EE4615 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA61DD2A44000EE4615 /* User.swift */; };
 		FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */; };
 		FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */; };
+		FB9571321DEBC4CD004ABE12 /* UIState+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9571311DEBC4CD004ABE12 /* UIState+Delegate.swift */; };
 		FBA356EE1DD534EB00DEEBF1 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356ED1DD534EB00DEEBF1 /* KeychainService.swift */; };
 		FBA356F01DD5355100DEEBF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356EF1DD5355100DEEBF1 /* Constants.swift */; };
 		FBA356F21DD5371600DEEBF1 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA356F11DD5371600DEEBF1 /* AppStorage.swift */; };
@@ -94,6 +95,7 @@
 		FB81DFA61DD2A44000EE4615 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		FB9571311DEBC4CD004ABE12 /* UIState+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIState+Delegate.swift"; sourceTree = "<group>"; };
 		FBA356ED1DD534EB00DEEBF1 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FBA356EF1DD5355100DEEBF1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBA356F11DD5371600DEEBF1 /* AppStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */,
 				FBBAD0541DE284EB005226BB /* RealmDataStoreType.swift */,
 				FB544ABF1DE3A62700EE1105 /* ListViewModelType.swift */,
+				FB9571311DEBC4CD004ABE12 /* UIState+Delegate.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				FBE523481DCFE20A006B3B1C /* Functions.swift in Sources */,
 				FB1E0A481DE0DB1200738DB2 /* Bindable.swift in Sources */,
 				FB1E0A301DDFE1CA00738DB2 /* Results+toArray.swift in Sources */,
+				FB9571321DEBC4CD004ABE12 /* UIState+Delegate.swift in Sources */,
 				FB654ABF1DE124CA0016627E /* UIAlertController+Convenience.swift in Sources */,
 				FB1E0A351DE008A000738DB2 /* UserSignupViewModel.swift in Sources */,
 				FBE523451DCFE00E006B3B1C /* JSON.swift in Sources */,
