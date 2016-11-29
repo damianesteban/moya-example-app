@@ -32,14 +32,14 @@ class ColorsViewController: UIViewController, UIStateDelegate {
         tableView.dataSource = self
         
         // Fetches the objects from the server
-        viewModel?.fetchAndUpdateColors() { _ in
-            print("fetched")
-        }
-        
-        viewModel?.didUpdateState = { state in
+        viewModel?.fetchAndUpdateColors() { state in
             self.update(state: state)
-            
+//            async {
+//                self.update(state: state)
+//                print("fetched")
+//            }
         }
+
         // When the Realm Collection receives a notification the tableView is reloaded.
         // NOTE: This is only a basic example of what can be done with Realm notifications.
         notifications = viewModel?.results.addNotificationBlock { [weak self] changes in
@@ -50,16 +50,38 @@ class ColorsViewController: UIViewController, UIStateDelegate {
         }
     }
     
-    func update(state: UIState) {
+    func update(state newState: UIState) {
+        print("Updating state.....")
         switch state {
-        case .success:
-            self.hideActivityIndicator()
-            tableView.reloadData()
         case .loading:
-            self.displayActivityHUD()
+            printState(state: state)
+            loadingView()
+        case .success:
+            printState(state: state)
+            viewForSuccess()
         case .failure(_):
-            self.hideActivityIndicator()
-            self.displayErrorHUD()
+            printState(state: state)
+            viewForFailure()
+        }
+    }
+    
+    func printState(state: UIState) {
+        print("Did update state to: \(state)")
+    }
+    
+    func loadingView() {
+       self.displayActivityHUD()
+    }
+    
+    func viewForSuccess() {
+        self.hideActivityIndicator()
+        self.tableView.reloadData()
+    }
+    
+    func viewForFailure() {
+        async {
+        self.hideActivityIndicator()
+        self.displayTextErrorHUD()
         }
     }
 }
@@ -92,5 +114,11 @@ extension ColorsViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = item.pantoneValue
         
         return cell
+    }
+}
+
+func async(block: @escaping () -> Void) {
+    DispatchQueue.main.async {
+        block()
     }
 }

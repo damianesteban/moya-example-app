@@ -46,23 +46,28 @@ extension UIViewController {
     
     /// Display a PKHUD success view
     func displaySuccessHUD(completion: (() -> Void)? = nil) {
-        delay(seconds: 1) {
             PKHUD.sharedHUD.contentView = PKHUDSuccessView()
             PKHUD.sharedHUD.hide(afterDelay: 1.0)
             if let completion = completion {
                 completion()
             }
-        }
     }
     
     /// Displays a PKHUD error view
     func displayErrorHUD(completion: (() -> Void)? = nil) {
-        delay(seconds: 1) {
             PKHUD.sharedHUD.contentView = PKHUDErrorView()
-            PKHUD.sharedHUD.hide(afterDelay: 1.0)
+            PKHUD.sharedHUD.hide(afterDelay: 2.0)
             if let completion = completion {
                 completion()
             }
+    }
+    
+    /// Displays a PHUD text error view
+    func displayTextErrorHUD(completion: (() -> Void)? = nil) {
+        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Error fetching remote data")
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        if let completion = completion {
+            completion()
         }
     }
     

@@ -16,6 +16,7 @@ enum UIState {
 
 protocol UIStateDelegate: class {
     var state: UIState { get set }
+    func update(state: UIState)
 }
 
 //class AnyUIStateDelegate<T>: UIStateDelegate {
