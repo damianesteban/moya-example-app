@@ -25,19 +25,19 @@ class ColorsViewController: UIViewController, UIStateDelegate {
     // ViewModel
     var viewModel: ColorsListViewModel?
     
-    var state: UIState = .loading
+    var state: UIState = .loading {
+        didSet {
+            update(state: state)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        
+        viewModel?.delegate = self
         // Fetches the objects from the server
-        viewModel?.fetchAndUpdateColors() { state in
-            self.update(state: state)
-//            async {
-//                self.update(state: state)
-//                print("fetched")
-//            }
+        viewModel?.fetchAndUpdateColors() {
+
         }
 
         // When the Realm Collection receives a notification the tableView is reloaded.
@@ -79,10 +79,7 @@ class ColorsViewController: UIViewController, UIStateDelegate {
     }
     
     func viewForFailure() {
-        async {
-        self.hideActivityIndicator()
         self.displayTextErrorHUD()
-        }
     }
 }
 

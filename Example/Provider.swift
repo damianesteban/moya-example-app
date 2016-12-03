@@ -63,7 +63,7 @@ enum APIName {
 
 // The enum conforms to `TargetType`
 extension APIName: TargetType {
-    var baseURL: URL { return URL(string: "http://reqres.in/ap")! }
+    var baseURL: URL { return URL(string: "http://reqres.in/api")! }
     var path: String {
         switch self {
         case .colors:

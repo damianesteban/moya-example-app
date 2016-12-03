@@ -18,8 +18,7 @@ class ColorsService: NetworkServiceType {
     
     // Default implementation of the initializer.  We do this because while running the app the Service
     // will always be initialized this way, but for testing we can provide a different MoyaProvider
-    required init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>(plugins:
-        [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])) {
+    required init(provider: MoyaProvider<APIName> = MoyaProvider<APIName>()) {
         self.provider = provider
     }
     

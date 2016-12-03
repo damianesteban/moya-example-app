@@ -16,7 +16,10 @@ enum UIState {
 
 protocol UIStateDelegate: class {
     var state: UIState { get set }
-    func update(state: UIState)
+}
+
+protocol UIStateHandler {
+    var delegate: UIStateDelegate? { get set }
 }
 
 //class AnyUIStateDelegate<T>: UIStateDelegate {

@@ -19,7 +19,7 @@ class ColorsDataStore: RealmDataStoreType {
 }
 
 // ListViewModel - In this case, the ViewModel fetches and updates the datsource via sercice classes.
-class ColorsListViewModel: ListViewModelType {
+class ColorsListViewModel: ListViewModelType, UIStateHandler {
     
     // MARK: - Properties
     typealias ListObject = ColorModel
@@ -48,20 +48,27 @@ class ColorsListViewModel: ListViewModelType {
     
     // Fetches the objects from the server and updates the Realm.  This can be
     // refactored to be a bit cleaner.
-    func fetchAndUpdateColors(completion: @escaping (_ state: UIState) -> Void) {
+    func fetchAndUpdateColors(completion: @escaping (Void) -> Void) {
+        self.delegate?.state = .loading
         networkService.getColors(target: .colors) { [weak self] result in
             do {
                 let colors = try result.dematerialize()
                 if !colors.isEmpty {
-                    completion(.success)
+                    async {
+                        self?.delegate?.state = UIState.success
+                    }
                 }
                 self?.dataStore.insertOrUpdateObjects(objects: colors)
                 if let newResults = self?.dataStore.fetchAllObjects(type: ColorModel.self) {
                     self?.results = newResults
-                    completion(.success)
+                    async {
+                        self?.delegate?.state = UIState.success
+                    }
                 }
             } catch let error {
-                completion(.failure(error))
+                async {
+                    self?.delegate?.state = UIState.failure(error)
+                }
             }
         }
     }

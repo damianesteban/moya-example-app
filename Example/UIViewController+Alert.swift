@@ -65,6 +65,7 @@ extension UIViewController {
     /// Displays a PHUD text error view
     func displayTextErrorHUD(completion: (() -> Void)? = nil) {
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Error fetching remote data")
+        PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
         if let completion = completion {
             completion()
