@@ -30,6 +30,8 @@
 		FB654AC11DE127820016627E /* UserSignupViewModel+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */; };
 		FB654AC31DE207510016627E /* Segue+Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC21DE207510016627E /* Segue+Perform.swift */; };
 		FB654AC51DE207B10016627E /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB654AC41DE207B10016627E /* ColorsViewController.swift */; };
+		FB6829091DF3D71B000E0896 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6829081DF3D71B000E0896 /* Images.swift */; };
+		FB68290B1DF3D726000E0896 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB68290A1DF3D726000E0896 /* Storyboards.swift */; };
 		FB81DFA71DD2A44000EE4615 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA61DD2A44000EE4615 /* User.swift */; };
 		FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */; };
 		FB81DFAC1DD2A7A200EE4615 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */; };
@@ -92,6 +94,8 @@
 		FB654AC01DE127820016627E /* UserSignupViewModel+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSignupViewModel+Delegate.swift"; sourceTree = "<group>"; };
 		FB654AC21DE207510016627E /* Segue+Perform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Segue+Perform.swift"; sourceTree = "<group>"; };
 		FB654AC41DE207B10016627E /* ColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
+		FB6829081DF3D71B000E0896 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		FB68290A1DF3D726000E0896 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		FB81DFA61DD2A44000EE4615 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB81DFA81DD2A5A100EE4615 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		FB81DFAB1DD2A7A200EE4615 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 		FB34753D1DCEBAEC00B9873F = {
 			isa = PBXGroup;
 			children = (
+				FB68290A1DF3D726000E0896 /* Storyboards.swift */,
+				FB6829081DF3D71B000E0896 /* Images.swift */,
 				FB12E5611DD7A672002214A7 /* Example.entitlements */,
 				FB3475481DCEBAEC00B9873F /* Sources */,
 				FB34755D1DCEBAED00B9873F /* ExampleTests */,
@@ -211,6 +217,7 @@
 		FB3475481DCEBAEC00B9873F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FB6829061DF3D487000E0896 /* Constants */,
 				FB81DFAA1DD2A79300EE4615 /* Extensions */,
 				FB81DFAE1DD2AA4100EE4615 /* Protocols */,
 				FBE5234B1DCFEFB9006B3B1C /* Models */,
@@ -246,6 +253,13 @@
 				FB1E0A4D1DE0E11500738DB2 /* InputValidationService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		FB6829061DF3D487000E0896 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		FB81DFAA1DD2A79300EE4615 /* Extensions */ = {
@@ -400,6 +414,7 @@
 				FB3475441DCEBAEC00B9873F /* Resources */,
 				3145DC618CFB424ECD6FFDD7 /* [CP] Embed Pods Frameworks */,
 				3392F51C75E41B114995344B /* [CP] Copy Pods Resources */,
+				FB6829071DF3D4A2000E0896 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -574,6 +589,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExampleTests/Pods-ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FB6829071DF3D4A2000E0896 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen storyboards -t swift3 \"$PROJECT_DIR/Example\" --output \"$PROJECT_DIR/Storyboards.swift\"\n  swiftgen images -t swift3 \"$PROJECT_DIR/Example/Assets.xcassets\" --output \"$PROJECT_DIR/Images.swift\"\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
+		};
 		FF62CC2BCDCC0730A7EFB934 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +631,7 @@
 				FB34756B1DCEBBFC00B9873F /* NetworkServiceType.swift in Sources */,
 				FBA356F81DD53B7000DEEBF1 /* UserService.swift in Sources */,
 				FBB2E3941DCEBF1000EB24FB /* DomainError.swift in Sources */,
+				FB6829091DF3D71B000E0896 /* Images.swift in Sources */,
 				FB81DFA91DD2A5A100EE4615 /* ServiceLocator.swift in Sources */,
 				FBE5234A1DCFEE7C006B3B1C /* ColorsService.swift in Sources */,
 				FB1E0A3C1DE00CB800738DB2 /* ProvisioningServiceType.swift in Sources */,
@@ -619,6 +648,7 @@
 				FB34754A1DCEBAEC00B9873F /* AppDelegate.swift in Sources */,
 				FBA356FA1DD53CF600DEEBF1 /* CredentialsType.swift in Sources */,
 				FBA356F21DD5371600DEEBF1 /* AppStorage.swift in Sources */,
+				FB68290B1DF3D726000E0896 /* Storyboards.swift in Sources */,
 				FB654ABD1DE124810016627E /* UIViewController+Alert.swift in Sources */,
 				FBBAD0551DE284EB005226BB /* RealmDataStoreType.swift in Sources */,
 				FB544AC01DE3A62700EE1105 /* ListViewModelType.swift in Sources */,

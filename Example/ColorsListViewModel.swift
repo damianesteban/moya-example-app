@@ -54,21 +54,15 @@ class ColorsListViewModel: ListViewModelType, UIStateHandler {
             do {
                 let colors = try result.dematerialize()
                 if !colors.isEmpty {
-                    async {
-                        self?.delegate?.state = UIState.success
-                    }
+                    self?.delegate?.state = UIState.success
                 }
                 self?.dataStore.insertOrUpdateObjects(objects: colors)
                 if let newResults = self?.dataStore.fetchAllObjects(type: ColorModel.self) {
                     self?.results = newResults
-                    async {
-                        self?.delegate?.state = UIState.success
-                    }
+                    self?.delegate?.state = UIState.success
                 }
             } catch let error {
-                async {
-                    self?.delegate?.state = UIState.failure(error)
-                }
+                self?.delegate?.state = UIState.failure(error)
             }
         }
     }
