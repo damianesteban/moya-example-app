@@ -245,7 +245,6 @@
 		FB3475691DCEBBEC00B9873F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FBBAD04E1DE2831F005226BB /* Repository */,
 				FB1E0A381DE00C5900738DB2 /* Provisioning */,
 				FB1E0A331DDFE6EC00738DB2 /* Authorization */,
 				FB1E0A311DDFE6D200738DB2 /* Networking */,
@@ -371,13 +370,6 @@
 				FB34755E1DCEBAED00B9873F /* ExampleTests.swift */,
 			);
 			name = Tests;
-			sourceTree = "<group>";
-		};
-		FBBAD04E1DE2831F005226BB /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Repository;
 			sourceTree = "<group>";
 		};
 		FBE523461DCFE1F1006B3B1C /* Common */ = {

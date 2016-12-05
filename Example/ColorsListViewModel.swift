@@ -27,7 +27,6 @@ class ColorsListViewModel: ListViewModelType, UIStateHandler {
     var dataStore: ColorsDataStore
     var networkService: ColorsService
     
-    var didUpdateState: ((_ state: UIState) -> Void)?
     var delegate: UIStateDelegate?
     
     var numberOfItems: Int {

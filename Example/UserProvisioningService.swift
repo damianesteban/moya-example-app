@@ -26,7 +26,7 @@ class NewUserProvisioningService {
     
     // NOTE: Example of how to properly document methods
     /**
-     Provivisions a new user
+     Provisions a new user
      
      - parameters:
         - username: The user's username
