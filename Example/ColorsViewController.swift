@@ -55,13 +55,13 @@ class ColorsViewController: UIViewController, UIStateDelegate {
         switch state {
         case .loading:
             printState(state: state)
-            loadingView()
+            presentLoadingView()
         case .success:
             printState(state: state)
-            viewForSuccess()
+            presentSuccessView()
         case .failure(_):
             printState(state: state)
-            viewForFailure()
+            presentFailureView()
         }
     }
     
@@ -69,16 +69,16 @@ class ColorsViewController: UIViewController, UIStateDelegate {
         print("Did update state to: \(state)")
     }
     
-    func loadingView() {
+    func presentLoadingView() {
        self.displayActivityHUD()
     }
     
-    func viewForSuccess() {
+    func presentSuccessView() {
         self.hideActivityIndicator()
         self.tableView.reloadData()
     }
     
-    func viewForFailure() {
+    func presentFailureView() {
         self.displayTextErrorHUD()
     }
 }
