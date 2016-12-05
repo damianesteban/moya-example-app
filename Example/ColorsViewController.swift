@@ -31,14 +31,13 @@ class ColorsViewController: UIViewController, UIStateDelegate {
         }
     }
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         viewModel?.delegate = self
         // Fetches the objects from the server
-        viewModel?.fetchAndUpdateColors() {
-
-        }
+        viewModel?.fetchAndUpdateColors() {}
 
         // When the Realm Collection receives a notification the tableView is reloaded.
         // NOTE: This is only a basic example of what can be done with Realm notifications.
@@ -49,7 +48,8 @@ class ColorsViewController: UIViewController, UIStateDelegate {
             tableView.reloadData()
         }
     }
-    
+
+    // MARK: - Delegate method
     func update(state newState: UIState) {
         print("Updating state.....")
         switch state {
@@ -64,7 +64,8 @@ class ColorsViewController: UIViewController, UIStateDelegate {
             presentFailureView()
         }
     }
-    
+
+    // MARK: - Presentation methods
     func printState(state: UIState) {
         print("Did update state to: \(state)")
     }
@@ -111,11 +112,5 @@ extension ColorsViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = item.pantoneValue
         
         return cell
-    }
-}
-
-func async(block: @escaping () -> Void) {
-    DispatchQueue.main.async {
-        block()
     }
 }
